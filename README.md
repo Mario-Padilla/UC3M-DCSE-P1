@@ -18,6 +18,17 @@ Las decisiones y la validación final corresponden al equipo. El ejercicio 5 apl
 
 Este README es la referencia de trabajo para las personas. [AGENTS.md](AGENTS.md) contiene las instrucciones operativas para los asistentes de IA que colaboren en la repo. La metodología y las convenciones aquí descritas son acuerdos de organización propuestos para el equipo; los requisitos de la entrega proceden del enunciado.
 
+### Cómo iniciar una solicitud a la IA
+
+Copia este texto y añade tu solicitud para que la IA consulte el contexto del proyecto antes de empezar:
+
+```text
+Antes de responder o hacer cambios, lee README.md y AGENTS.md para
+entender el contexto del proyecto y seguir sus instrucciones.
+
+Mi solicitud es: [escribe aquí lo que necesitas].
+```
+
 ## Estructura
 
 ```text
