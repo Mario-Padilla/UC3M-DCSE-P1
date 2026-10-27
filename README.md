@@ -11,10 +11,10 @@ Las decisiones y la validación final corresponden al equipo. El ejercicio 5 apl
 ## Cómo utilizar esta repo
 
 1. Leer el [enunciado](docs/enunciado/P1.docx.pdf) y esta metodología.
-2. Acordar el reparto de trabajo y el alcance antes de redactar requisitos.
-3. Seguir las fases de la sección **Metodología**, guardando cada resultado en el archivo indicado.
-4. Conservar las versiones y las evidencias de evaluación: deben poder reconstruirse los cambios y sus motivos.
-5. Revisar el trabajo en equipo y actualizar el estado del bloque en el índice de entregables.
+2. Acordar el reparto de trabajo y las decisiones de alcance que corresponden al equipo.
+3. Pedir a la IA que realice la tarea y actualice los artefactos relacionados —matrices, evidencias, enlaces e índice— como parte del mismo trabajo, sin esperar una petición adicional.
+4. Revisar los cambios sustantivos, las decisiones pendientes y los resultados que requieren validación humana.
+5. Conservar las versiones y evidencias; Git ya mantiene el historial de ediciones, por lo que no hace falta registrar manualmente cada cambio editorial.
 
 Este README es la referencia de trabajo para las personas. [AGENTS.md](AGENTS.md) contiene las instrucciones operativas para los asistentes de IA que colaboren en la repo. La metodología y las convenciones aquí descritas son acuerdos de organización propuestos para el equipo; los requisitos de la entrega proceden del enunciado.
 
@@ -79,14 +79,14 @@ Contexto y alcance → requisitos v1 → evaluación general con IA → requisit
 → evaluación INCOSE → requisitos v3 → especificaciones → código → pruebas
 ```
 
-Las decisiones humanas y las evidencias se registran durante todo el proceso. El ejercicio 5 reutiliza el método para el proyecto propio.
+La IA prepara y mantiene los artefactos documentales durante el trabajo. El equipo toma las decisiones sustantivas —alcance, aprobación de requisitos, aceptación de observaciones y cierre de fases— y revisa las propuestas y evidencias. Git conserva el historial técnico de ediciones; las matrices registran relaciones relevantes para el proyecto, no cada cambio de palabras. El ejercicio 5 reutiliza el método para el proyecto propio.
 
 ### 0. Coordinar el trabajo
 
-- Asignar un responsable de redacción y un revisor por bloque. Una misma persona puede asumir varias tareas; la revisión debe quedar identificada.
+- Asignar un responsable de decisión y un revisor por bloque. La IA puede preparar borradores y mantener los registros; la revisión humana debe identificar quién validó las decisiones sustantivas.
 - Acordar las funcionalidades incluidas y excluidas, las herramientas y la forma de registrar las decisiones.
 - Utilizar estos estados en el índice: `Pendiente`, `En curso`, `En revisión` y `Completado`. Si un bloque no se realiza, indicar `No realizado` y el motivo.
-- Registrar en el documento principal de cada bloque su responsable, revisor, fecha, estado y entradas utilizadas. Mientras no se hayan asignado, usar `TODO`.
+- Registrar en el documento principal de cada bloque el estado y las entradas utilizadas. Registrar nombres de responsables o revisores solo cuando el equipo los comunique; mientras tanto, usar `TODO`.
 - Dividir las tareas por entregables o conjuntos de requisitos y acordar quién edita cada archivo para reducir conflictos.
 
 **Punto pendiente de aclaración:** el ejercicio 4 aparece como opcional en el apartado 1.6, aunque sus entregables figuran en la entrega agregada. Confirmar con el profesor cómo se aplica esa opcionalidad y documentar la decisión del equipo.
@@ -114,9 +114,9 @@ Las decisiones humanas y las evidencias se registran durante todo el proceso. El
 
 1. Preparar un prompt que solicite una evaluación individual de todos los requisitos.
 2. Solicitar ambigüedades, información incompleta, falta de verificabilidad, redundancias, contradicciones y omisiones, con justificación de los hallazgos.
-3. Guardar el prompt exacto, la respuesta y los datos de la ejecución.
+3. La IA guarda el prompt exacto, la respuesta y los datos de la ejecución en los archivos indicados. El equipo revisa los hallazgos y decide su aceptación o rechazo.
 4. Revisar cada observación: aceptarla, rechazarla o aceptarla parcialmente, justificando la decisión. Las pendientes deben quedar señaladas.
-5. Generar v2 a partir de las decisiones del equipo y registrar los cambios respecto a v1.
+5. La IA prepara v2 a partir de las decisiones comunicadas por el equipo y registra los cambios respecto a v1. No presenta propuestas pendientes como decisiones aprobadas.
 
 | Archivo | Contenido esperado |
 | --- | --- |
@@ -135,8 +135,8 @@ Las decisiones humanas y las evidencias se registran durante todo el proceso. El
 2. Seleccionar reglas explícitas y documentar sus identificadores, significado y forma de evaluación. Verificar los identificadores en la edición consultada.
 3. Preparar un prompt que evalúe cada requisito frente a esas reglas y justifique los resultados.
 4. Revisar singularidad, claridad, estructura gramatical, términos subjetivos, condiciones de aplicación y verificabilidad, entre los aspectos seleccionados.
-5. Revisar las observaciones, justificar las decisiones y separar los requisitos que agrupen varias obligaciones cuando corresponda.
-6. Generar v3 y comparar los resultados con la evaluación general del ejercicio 2.
+5. La IA organiza las observaciones y propone cambios, incluida la separación de requisitos que agrupen varias obligaciones. El equipo decide y justifica qué cambios acepta.
+6. La IA prepara v3 y la comparativa a partir de las decisiones disponibles. Las decisiones no comunicadas por el equipo quedan marcadas como pendientes.
 
 | Archivo | Contenido esperado |
 | --- | --- |
@@ -157,13 +157,13 @@ Para la matriz se pueden utilizar `Cumple`, `No cumple`, `No aplica` y `No evalu
 
 **Entrada:** versión de requisitos aprobada y decisión sobre la realización del ejercicio 4.
 
-1. Concretar el alcance funcional de la simulación a partir de los requisitos aprobados.
+1. El equipo concreta y aprueba el alcance funcional de la simulación a partir de los requisitos aprobados; la IA puede preparar una propuesta para revisión.
 2. Inicializar OpenSpec o la herramienta equivalente acordada y registrar su versión. Utilizar su estructura de propuesta, especificaciones, diseño y tareas cuando corresponda.
 3. Derivar escenarios verificables, identificando los requisitos de origen. Contemplar situaciones normales, errores y condiciones límite relevantes.
 4. Implementar los comportamientos especificados y mantener la relación con los elementos de código.
 5. Diseñar las pruebas a partir de los requisitos y sus escenarios; automatizarlas cuando sea viable.
-6. Ejecutarlas, conservar las evidencias y corregir los incumplimientos detectados. Repetir las pruebas afectadas tras las correcciones.
-7. Completar la trazabilidad y el informe de verificación. Añadir al README los comandos reales de instalación, ejecución y pruebas cuando se elija la tecnología.
+6. La IA ejecuta las pruebas disponibles, conserva las evidencias e informa de fallos; tras las correcciones, repite las pruebas afectadas cuando sea posible.
+7. La IA actualiza la trazabilidad y el informe de verificación durante las tareas que afecten a requisitos, escenarios, código o pruebas. Añade al README los comandos reales de instalación, ejecución y pruebas cuando se elija y compruebe la tecnología.
 
 | Ubicación | Contenido esperado |
 | --- | --- |
@@ -242,9 +242,9 @@ Decisión del equipo | Justificación del equipo | Cambio y requisito resultante
 
 Usar `Aceptada`, `Rechazada`, `Aceptada parcialmente` o `Pendiente`. Una propuesta generada por IA conserva el estado pendiente hasta que el equipo la revise. El registro de cambios debe relacionar versión de origen, versión de destino, IDs afectados, modificación y motivo.
 
-## Cómo mantener la trazabilidad
+## Cómo se mantiene la trazabilidad
 
-La matriz [trazabilidad.csv](docs/04-verificacion/trazabilidad.csv) permite comprobar que cada requisito se ha desarrollado y verificado, y localizar qué elementos se verían afectados por un cambio.
+La IA mantiene la matriz [trazabilidad.csv](docs/04-verificacion/trazabilidad.csv) como parte de cada tarea que afecte a requisitos, especificaciones, implementación o pruebas. No es necesario que el equipo registre manualmente las filas rutinarias: debe revisar que las relaciones propuestas sean correctas y resolver los pendientes que dependan de decisiones humanas. La matriz permite comprobar que cada requisito se ha desarrollado y verificado, y localizar qué elementos se verían afectados por un cambio.
 
 ```text
 Requisito original → requisito aprobado → escenario → implementación → prueba → resultado/evidencia
@@ -267,20 +267,20 @@ requisito_original,requisito_aprobado,especificacion_escenario,elemento_implemen
 CAF-RF-004 v1,CAF-RF-004 v3,TODO: escenario de ingredientes insuficientes,TODO: componente de inventario,TODO: prueba de stock insuficiente,Pendiente,
 ```
 
-- Utilizar una fila por relación de verificación. Si un requisito necesita varias pruebas, repetir el ID en varias filas; si una prueba cubre varios requisitos, registrar cada relación.
+- La IA crea o actualiza las filas afectadas en cada tarea, utilizando una fila por relación de verificación. Si un requisito necesita varias pruebas, repite el ID en varias filas; si una prueba cubre varios requisitos, registra cada relación.
 - Mantener una fila pendiente para requisitos aún sin escenario, implementación o prueba; así las carencias permanecen visibles.
 - Las divisiones de requisitos pueden producir varias filas que compartan el requisito original.
 - Los requisitos retirados se justifican en el registro de cambios; los aprobados fuera del alcance implementado deben señalarse expresamente, sin presentarlos como verificados.
-- Registrar resultados de una ejecución identificada y coherente con el informe. Después de un cambio que invalide la evidencia anterior, marcar la verificación afectada como pendiente hasta repetirla.
+- Registrar resultados de una ejecución identificada y coherente con el informe. La IA no inventa relaciones desconocidas ni resultados. Después de un cambio que invalide la evidencia anterior, marca la verificación afectada como pendiente hasta repetirla.
 - Editar el CSV en UTF-8 con comas como separador, usando comillas dobles si un campo contiene comas o saltos de línea. Puede abrirse en un editor, Excel o LibreOffice Calc.
 
 ## Colaboración y revisión
 
-1. Acordar el bloque y los archivos que se van a editar. Para cambios en paralelo, utilizar ramas descriptivas, por ejemplo `docs/evaluacion-ia`.
-2. Realizar cambios centrados en una tarea y conservar las fuentes, versiones y evidencias asociadas.
-3. Solicitar al revisor que compruebe contenido, coherencia con los requisitos y ubicación de los artefactos. Registrar quién revisó y las decisiones adoptadas en el documento del bloque.
+1. Acordar la tarea y las decisiones que corresponden al equipo. Para cambios en paralelo, utilizar ramas descriptivas, por ejemplo `docs/evaluacion-ia`.
+2. Pedir a la IA que ejecute la tarea y actualice los documentos y relaciones afectados en el mismo trabajo.
+3. Revisar el resumen de cambios, las decisiones pendientes, los enlaces y los resultados de comprobaciones. Comunicar a la IA las decisiones aprobadas para que actualice los registros.
 4. Integrar el trabajo mediante el procedimiento acordado por el equipo, utilizando una pull request si se trabaja en GitHub.
-5. Actualizar el índice del README cuando cambie el estado o se añadan entregables. `Completado` requiere revisión humana y cumplimiento del criterio de cierre de la fase.
+5. La IA actualiza el índice cuando cambian los entregables o el estado. `Completado` requiere confirmación/revisión humana y cumplimiento del criterio de cierre; la IA no atribuye esa aprobación por inferencia.
 
 ## Estado de la base del proyecto
 

@@ -14,6 +14,22 @@ Leer [README.md](README.md) antes de realizar cambios. El README contiene la met
 4. Consultar las decisiones y los supuestos asociados antes de interpretar o modificar un requisito.
 5. Si falta información, avanzar en las partes independientes y señalar la decisión pendiente. Pedir aclaración cuando la incertidumbre impida una edición correcta.
 
+## Mantenimiento proactivo de entregables
+
+La IA debe encargarse del trabajo documental rutinario como parte de la tarea solicitada. No esperar a que el usuario pida por separado actualizar matrices, evidencias, referencias o el índice.
+
+- Antes de finalizar cualquier tarea, identificar los artefactos relacionados que quedan afectados y actualizar los que correspondan: requisitos/versiones, registro de cambios, evaluaciones, OpenSpec, plan de pruebas, trazabilidad, informe de verificación, enlaces e índice del README.
+- Actualizar filas y registros existentes cuando sea posible para evitar duplicados. Añadir filas cuando haya relaciones nuevas o pruebas distintas.
+- Mantener `docs/04-verificacion/trazabilidad.csv` actualizado en cada cambio que afecte requisitos, escenarios, especificaciones, código o pruebas. Registrar relaciones conocidas; marcar con `TODO` o `Pendiente` lo que aún no pueda completarse con evidencia.
+- Registrar en el historial de cambios el origen, destino, IDs afectados y motivo cuando se creen versiones revisadas, se dividan o sustituyan requisitos o se cambie una base aprobada. Git conserva el historial de ediciones; no crear un registro manual por cada corrección editorial o cambio de formato.
+- Guardar prompts y respuestas originales, metadatos y referencias de entrada cuando se realice una evaluación. Actualizar la matriz de evaluación para incluir todos los requisitos evaluados, también los que no tengan hallazgos.
+- Actualizar el índice y el estado del README cuando se añadan entregables o cambie el progreso que esté confirmado. No marcar un ejercicio como aprobado o completado basándose únicamente en el trabajo del agente.
+- Si no se puede determinar con evidencia una relación, decisión, responsable, motivo o resultado, no inventarlo. Dejarlo como pendiente e indicarlo en el resumen final; continuar con las actualizaciones independientes.
+- No exigir al equipo que realice manualmente estas actualizaciones rutinarias: preparar los artefactos para que su revisión humana sea suficiente.
+- En el resumen de cada tarea, mencionar brevemente los artefactos auxiliares actualizados, las comprobaciones ejecutadas y únicamente las decisiones o pendientes que requieren atención humana.
+
+El equipo conserva la responsabilidad de aprobar el alcance, aceptar o rechazar observaciones de IA, aprobar requisitos y validar el cierre de cada fase. La IA puede preparar propuestas y registrar fielmente las decisiones comunicadas por el equipo, pero no atribuir aprobaciones ni decisiones no expresadas.
+
 ## Ubicación de los cambios
 
 | Trabajo | Destino |
@@ -94,8 +110,8 @@ Aplicar comprobaciones proporcionales a los cambios:
 2. En documentación, comprobar rutas, enlaces locales, nombres de archivos, versiones e IDs referenciados. Ejecutar `git diff --check` para detectar errores de espacios.
 3. En tablas y CSV, comprobar columnas y formato, así como relaciones o estados afectados.
 4. Si cambia código, ejecutar las pruebas pertinentes con los comandos disponibles. Si no se pueden ejecutar, indicar el bloqueo sin afirmar que pasan.
-5. Actualizar el README si cambian estructura, comandos o estado de los entregables. No marcar un bloque como completado sin la revisión humana exigida por la metodología.
-6. Resumir los archivos modificados, las comprobaciones realizadas y los pendientes concretos.
+5. Actualizar proactivamente los registros auxiliares afectados conforme a la sección **Mantenimiento proactivo de entregables** y la metodología del README. No marcar un bloque como completado sin la revisión humana exigida.
+6. Resumir los archivos modificados, las comprobaciones realizadas y los pendientes concretos que requieren revisión o decisión humana.
 
 Para cambios exclusivamente documentales no hace falta introducir un framework de pruebas ni nuevas dependencias.
 
