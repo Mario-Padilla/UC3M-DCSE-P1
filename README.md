@@ -74,7 +74,7 @@ Las carpetas sin contenido incluyen un archivo `.gitkeep` para conservarlas en G
 | Bloque | Documentos | Estado |
 | --- | --- | --- |
 | Enunciado | [PDF de la práctica](docs/enunciado/P1.docx.pdf) | Disponible |
-| Ejercicio 1 | [Contexto y alcance](docs/01-requisitos-iniciales/contexto-y-alcance.md), [requisitos v1](docs/01-requisitos-iniciales/requisitos-v1.md) | Pendiente |
+| Ejercicio 1 | [Contexto y alcance](docs/01-requisitos-iniciales/contexto-y-alcance.md), [requisitos v1](docs/01-requisitos-iniciales/requisitos-v1.md) | En curso: contexto y alcance pendiente de revisión; requisitos v1 pendientes |
 | Ejercicio 2 | [Prompt](docs/02-evaluacion-ia/prompt.md), [respuesta de IA](docs/02-evaluacion-ia/respuesta-ia.md), [evaluación y decisiones](docs/02-evaluacion-ia/evaluacion-y-decisiones.md), [requisitos v2](docs/02-evaluacion-ia/requisitos-v2.md) | Pendiente |
 | Ejercicio 3 | [Reglas seleccionadas](docs/03-evaluacion-incose/reglas-seleccionadas.md), [prompt](docs/03-evaluacion-incose/prompt.md), [respuesta de IA](docs/03-evaluacion-incose/respuesta-ia.md), [matriz y decisiones](docs/03-evaluacion-incose/matriz-y-decisiones.md), [requisitos v3](docs/03-evaluacion-incose/requisitos-v3.md), [comparativa](docs/03-evaluacion-incose/comparativa-evaluaciones.md) | Pendiente |
 | Ejercicio 4 | [OpenSpec](openspec/), [código](src/), [pruebas](tests/), [plan de pruebas](docs/04-verificacion/plan-de-pruebas.md), [trazabilidad](docs/04-verificacion/trazabilidad.csv), [informe de verificación](docs/04-verificacion/informe-verificacion.md) | Pendiente; opcional según el apartado 1.6 |
