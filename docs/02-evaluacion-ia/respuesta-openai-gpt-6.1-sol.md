@@ -1,4 +1,4 @@
-# Evaluación general de requisitos — gpt-6.1-sol
+# Evaluación general de requisitos — OpenAI gpt-6.1-sol
 - **Modelo:** `openai/gpt-6.1-sol`
 - **Herramienta:** OpenCode.
 - **Fecha:** 28 de octubre de 2026.

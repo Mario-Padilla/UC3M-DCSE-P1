@@ -24,7 +24,7 @@ Limitaciones:
 - La evaluación es documental. Los criterios «Cómo comprobarlo» describen comprobaciones previstas; no se han ejecutado pruebas ni se ha comprobado una implementación o un dispositivo físico.
 - La extracción del PDF es textual. La sección 1.4 es legible y no se ha detectado una pérdida relevante para esta tarea.
 - La evaluación se refiere únicamente a `requisitos-v1.md`; no se han evaluado versiones posteriores.
-- No se han usado como evidencia las evaluaciones previas de `docs/02-evaluacion-ia/`. La respuesta de GPT SOL se ha consultado únicamente para adaptar el formato de este archivo, después de completar la evaluación. Las observaciones siguientes se basan en la versión v1 y en el contexto.
+- No se han usado como evidencia las evaluaciones previas de `docs/02-evaluacion-ia/`. Las observaciones siguientes se basan en la versión v1 y en el contexto.
 
 **Aclaración posterior (28 de octubre de 2026):** la referencia a `documento_requisitos_v1.md` tenía un nombre incorrecto y no designaba un tercer documento histórico. Los documentos correctos de entrada fueron [Contexto y alcance](../01-requisitos-iniciales/contexto-y-alcance.md) y [Requisitos iniciales v1](../01-requisitos-iniciales/requisitos-v1.md), ambos leídos para esta evaluación. Por tanto, no existía una limitación de acceso a esas fuentes. Esta nota corrige la limitación consignada arriba y conserva la formulación original como evidencia de la evaluación generada.
 
@@ -263,3 +263,5 @@ Se incluyen dos posibles ampliaciones opcionales, no exigidas por los documentos
 13. **Ampliación opcional:** ¿debe informarse al cliente de que se ha solicitado la devolución, además de avisar de que el servicio no se completó?
 
 **Comprobación final:** la tabla contiene los 24 IDs funcionales y los 2 no funcionales, una sola vez cada uno. Se han buscado las seis categorías; los trece hallazgos contienen evidencia, justificación y propuestas o preguntas. Se distinguen problemas del alcance, aclaraciones necesarias y ampliaciones opcionales. Todas las observaciones quedan pendientes de revisión del equipo; no se ha creado una versión revisada de los requisitos ni se han modificado los documentos fuente.
+
+**Aclaración posterior sobre la denominación (28 de octubre de 2026):** la referencia histórica al modelo y la ruta `respuesta-gpt-sol.md` en esta evidencia corresponden a OpenAI, modelo `openai/gpt-6.1-sol`. Se conserva la redacción original de la evaluación; el archivo de respuesta se identifica ahora como `respuesta-openai-gpt-6.1-sol.md`.

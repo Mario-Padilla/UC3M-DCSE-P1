@@ -6,7 +6,7 @@ Para ejecutar este prompt, adjunta los tres documentos indicados. Si la herramie
 
 Conserva el prompt utilizado y la respuesta completa de la IA como evidencias del ejercicio. El equipo revisará las observaciones y decidirá cuáles acepta, rechaza o modifica; la salida de la IA no constituye una versión aprobada de los requisitos.
 
-Registra cada respuesta en un archivo separado cuyo nombre identifique el modelo, por ejemplo `respuesta-gpt-sol.md`. En la respuesta, identifica el proveedor y el nombre del modelo utilizado, incluida la versión o identificador exacto si está disponible. No infieras ni inventes estos datos: si no puedes confirmarlos, indica «no especificado» y conserva cualquier denominación proporcionada por el usuario.
+Registra cada respuesta en un archivo separado cuyo nombre identifique el modelo, por ejemplo `respuesta-openai-gpt-6.1-sol.md`. En la respuesta, identifica el proveedor y el nombre del modelo utilizado, incluida la versión o identificador exacto si está disponible. No infieras ni inventes estos datos: si no puedes confirmarlos, indica «no especificado» y conserva cualquier denominación proporcionada por el usuario.
 
 ## Prompt
 
