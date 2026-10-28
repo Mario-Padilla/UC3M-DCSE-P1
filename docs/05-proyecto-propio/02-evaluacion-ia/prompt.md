@@ -6,7 +6,7 @@ Para ejecutar este prompt, adjunta los tres documentos indicados. Si la herramie
 
 Conserva el prompt utilizado y la respuesta completa de la IA como evidencias del ejercicio. El equipo revisará las observaciones y decidirá cuáles acepta, rechaza o modifica; la salida de la IA no constituye una versión aprobada de los requisitos.
 
-Registra cada respuesta en un archivo separado dentro de `docs/05-proyecto-propio/evaluaciones/`, cuyo nombre identifique el modelo, por ejemplo `docs/05-proyecto-propio/evaluaciones/respuesta-openai-gpt-6.1-sol.md`. En la respuesta, identifica el proveedor y el nombre del modelo utilizado, incluida la versión o identificador exacto si está disponible. No infieras ni inventes estos datos: si no puedes confirmarlos, indica «no especificado» y conserva cualquier denominación proporcionada por el usuario.
+Registra cada respuesta en un archivo separado dentro de `docs/05-proyecto-propio/02-evaluacion-ia/`, cuyo nombre identifique el modelo, por ejemplo `docs/05-proyecto-propio/02-evaluacion-ia/respuesta-openai-gpt-6.1-sol.md`. En la respuesta, identifica el proveedor y el nombre del modelo utilizado, incluida la versión o identificador exacto si está disponible. No infieras ni inventes estos datos: si no puedes confirmarlos, indica «no especificado» y conserva cualquier denominación proporcionada por el usuario.
 
 ## Prompt
 
@@ -24,10 +24,10 @@ Lee estos documentos adjuntos. Si la herramienta tiene acceso al repositorio, pu
 1. `docs/enunciado/P1.docx.pdf`
    Fuente de las instrucciones académicas. Para esta tarea, consulta el apartado 1.4, «Ejercicio 2. Evaluación de la calidad mediante IA generativa», como método de evaluación, y el apartado 1.7, «Ejercicio 5. Aplicación a nuestro proyecto». El sistema a evaluar es el descrito en los documentos 2 y 3.
 
-2. `docs/05-proyecto-propio/contexto-y-alcance.md`
+2. `docs/05-proyecto-propio/01-requisitos-iniciales/contexto-y-alcance.md`
    Referencia para entender las necesidades, los límites, las interacciones y los supuestos acordados para el sistema.
 
-3. `docs/05-proyecto-propio/requisitos-v1.md`
+3. `docs/05-proyecto-propio/01-requisitos-iniciales/requisitos-v1.md`
    Documento principal que debes evaluar. Revisa cada requisito funcional y no funcional, incluido su texto, descripción, módulo y criterio «Cómo comprobarlo».
 
 Confirma al inicio qué documentos has podido leer. Si no puedes acceder a alguno, indícalo y explica qué partes de la evaluación quedan limitadas. No supongas el contenido de archivos que no hayas leído.

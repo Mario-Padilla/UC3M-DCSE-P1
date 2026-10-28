@@ -1,6 +1,6 @@
 # Requisitos del sistema revisados — v2
 
-Esta versión revisa los [requisitos iniciales v1](../requisitos-v1.md) a partir de la evaluación general registrada en [evaluación y decisiones](evaluacion-y-decisiones.md) y del [contexto y alcance](../contexto-y-alcance.md). La v1 se conserva como evidencia de la versión inicial. El contexto no se ha reescrito: si una frase suya sigue en tensión con esta versión, se indica aquí y en el registro de decisiones.
+Esta versión revisa los [requisitos iniciales v1](../01-requisitos-iniciales/requisitos-v1.md) a partir de la evaluación general registrada en [evaluación y decisiones](evaluacion-y-decisiones.md) y del [contexto y alcance](../01-requisitos-iniciales/contexto-y-alcance.md). La v1 se conserva como evidencia de la versión inicial. El contexto no se ha reescrito: si una frase suya sigue en tensión con esta versión, se indica aquí y en el registro de decisiones.
 
 El sistema es el Sistema de Generación Automática de Modelos y Pruebas de Ciberseguridad mediante IA Generativa. El analista lo utiliza desde la interfaz web ya descrita en el contexto. El flujo es: ingesta y confirmación de etiquetas, generación del modelo, confirmación del modelo, generación de casos en estado Pendiente, validación estática y, solo después, ejecución del subconjunto seleccionado contra la API de simulación o de referencia.
 

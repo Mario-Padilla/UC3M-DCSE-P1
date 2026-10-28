@@ -1,7 +1,7 @@
 # Ejercicio 5: evaluación general y decisiones del equipo
 
-- **Estado:** [requisitos v2](requisitos-v2.md) preparados a partir de esta evaluación. [Requisitos v1](../requisitos-v1.md) se conserva sin modificar. Las aplicaciones de E5-001 a E5-037 quedan pendientes de confirmación del equipo. El [contexto y alcance](../contexto-y-alcance.md) no se ha reescrito.
-- **Fuentes:** evaluación de Grok 4.7 realizada en Cursor el 28 de octubre de 2026; [prompt](prompt.md); [contexto y alcance](../contexto-y-alcance.md); [requisitos iniciales v1](../requisitos-v1.md); [enunciado](../../enunciado/P1.docx.pdf), apartados 1.4 y 1.7.
+- **Estado:** [requisitos v2](requisitos-v2.md) preparados a partir de esta evaluación. [Requisitos v1](../01-requisitos-iniciales/requisitos-v1.md) se conserva sin modificar. Las aplicaciones de E5-001 a E5-037 quedan pendientes de confirmación del equipo. El [contexto y alcance](../01-requisitos-iniciales/contexto-y-alcance.md) no se ha reescrito.
+- **Fuentes:** evaluación de Grok 4.7 realizada en Cursor el 28 de octubre de 2026; [prompt](prompt.md); [contexto y alcance](../01-requisitos-iniciales/contexto-y-alcance.md); [requisitos iniciales v1](../01-requisitos-iniciales/requisitos-v1.md); [enunciado](../../enunciado/P1.docx.pdf), apartados 1.4 y 1.7.
 
 La respuesta completa de esa evaluación no está archivada en un archivo `respuesta-*.md` de esta carpeta. Este documento resume sus hallazgos H-001 a H-037 y no sustituye esa evidencia. El proveedor indicado en la sesión fue SpaceXAI y el modelo, Grok 4.7. No consta un identificador de compilación o de API más específico.
 
