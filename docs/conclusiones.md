@@ -1,1 +1,11 @@
-TODO
+# Conclusiones
+
+La práctica muestra que la IA generativa puede servir como apoyo útil en ingeniería de requisitos para localizar ambigüedades, condiciones implícitas, omisiones y obligaciones que conviene separar. En la máquina de café, la evaluación general permitió concretar el comportamiento relacionado con selección, pago, cancelación e incidencias, mientras que la revisión basada en reglas seleccionadas de INCOSE ayudó a expresar esas decisiones mediante requisitos más explícitos e individualmente comprobables.
+
+La principal ventaja observada fue disponer de revisiones estructuradas y justificadas que el equipo pudo contrastar con el alcance del sistema. La conservación de las versiones, los prompts, las respuestas originales y las decisiones permitió seguir la evolución de los requisitos y distinguir las propuestas de la IA de los cambios finalmente acordados. Ambos enfoques resultaron complementarios: la evaluación general ayudó a precisar qué debía hacer el sistema y la revisión INCOSE contribuyó a mejorar cómo se expresaban sus obligaciones.
+
+No obstante, la IA no sustituyó la validación del equipo. Se observaron diferencias de interpretación y clasificación entre modelos, propuestas que requerían adaptación para no modificar el alcance y limitaciones que persistieron tras las evaluaciones. En el proyecto propio, estos límites resultaron especialmente visibles al distinguir consistencia interna de fidelidad al requisito, revisar la vigencia de una validación tras modificar artefactos y comprobar que una precisión elevada puede ocultar omisiones. Estos casos muestran que una redacción más clara o una métrica favorable no bastan por sí solas para garantizar la calidad.
+
+Asimismo, las evaluaciones realizadas no permiten establecer la superioridad de un modelo o atribuir toda la mejora exclusivamente al uso de INCOSE, ya que se revisaron versiones sucesivas con enfoques distintos. Su valor reside en las mejoras concretas y justificadas que aportaron al proceso, no en el número de observaciones generadas.
+
+En conclusión, el uso más adecuado de la IA en esta experiencia fue como **asistente de revisión, apoyado en fuentes explícitas, criterios definidos y decisiones humanas justificadas**. Su aportación principal consistió en convertir dudas y obligaciones implícitas en asuntos identificables y revisables. La responsabilidad del equipo fue esencial para valorar cada propuesta, preservar los límites del sistema y asegurar que los cambios respondieran a las necesidades del proyecto.

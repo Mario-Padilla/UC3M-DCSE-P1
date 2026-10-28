@@ -4,7 +4,7 @@
 
 Este documento desarrolla los pasos 5 y 6 del apartado 1.5 del [enunciado](../enunciado/P1.docx.pdf): comparar la evaluación general del ejercicio 2 con la evaluación basada en reglas INCOSE del ejercicio 3 y valorar críticamente la capacidad de la IA para aplicar esas reglas.
 
-**Estado:** comparativa y valoración crítica redactadas con asistencia de OpenAI, modelo `gpt-6.1-sol` (`openai/gpt-6.1-sol`), mediante OpenCode, y revisadas por el equipo. El equipo ha confirmado la revisión final de [requisitos v3](requisitos-v3.md), la revisión de este análisis y el cierre del ejercicio 3. Este análisis no introduce nuevas decisiones sobre el comportamiento del sistema.
+**Estado:** comparativa y valoración crítica revisadas por el equipo. El equipo ha confirmado la revisión final de [requisitos v3](requisitos-v3.md), la revisión de este análisis y el cierre del ejercicio 3. Este análisis no introduce nuevas decisiones sobre el comportamiento del sistema.
 
 Las evidencias utilizadas son:
 

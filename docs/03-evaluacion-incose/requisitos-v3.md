@@ -77,7 +77,7 @@ Los siguientes requisitos de calidad fueron aprobados previamente por el equipo;
 
 ## 4. Relaciones de origen y decisiones aplicadas
 
-Las referencias `E3` remiten al registro de decisiones de la [matriz](matriz-y-decisiones.md). Esta relación documenta el origen de los requisitos revisados; no sustituye la matriz de trazabilidad de implementación y pruebas del ejercicio 4.
+Las referencias `E3` remiten al registro de decisiones de la [matriz](matriz-y-decisiones.md). Esta relación documenta el origen de los requisitos revisados.
 
 | Origen en v2 | Requisito(s) en v3 | Decisión aplicada |
 | --- | --- | --- |

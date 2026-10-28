@@ -1,67 +1,96 @@
-# UC3M-DCSE-P1
+# Práctica 1 — Ingeniería de requisitos asistida por IA y desarrollo dirigido por especificación
 
-Práctica 1 — Ingeniería de requisitos asistida por IA y desarrollo dirigido por especificación.
+**Universidad Carlos III de Madrid**
 
-## Objetivo
+**Asignatura:** Digitization of Complex Systems Engineering
 
-Documentar el ciclo de ingeniería de requisitos de una máquina de café de vending y aplicar el proceso al proyecto propio del equipo. El ejercicio 4 —implementación y verificación— es opcional según el apartado 1.6 del [enunciado](docs/enunciado/P1.docx.pdf).
+## Integrantes del equipo
 
-## Cómo usar esta repo
+- Mario Padilla Franco
+- Gustavo Lucca Padilla
+- Matteo Davidhi
+- Ian Herman
+- Javier López Morales
 
-Esta repo sirve como **estructura e índice del trabajo**. Los documentos de cada carpeta contienen lo realizado; el estado de la tabla siguiente indica el progreso actual. Git conserva el historial de cambios.
+## Presentación
 
-### Cómo iniciar una solicitud a la IA
+Esta entrega recoge la definición y revisión de los requisitos del software de una máquina de café de vending y la aplicación del mismo proceso al proyecto propio del equipo: un sistema de generación automática de modelos y pruebas de ciberseguridad mediante IA generativa.
 
-```text
-Antes de responder o hacer cambios, lee README.md y AGENTS.md para
-entender el contexto del proyecto y seguir sus instrucciones.
+El trabajo parte de una especificación inicial, continúa con una evaluación general de calidad y una revisión frente a reglas seleccionadas de INCOSE, y concluye con el análisis crítico de los resultados. Se incluyen las sucesivas versiones de requisitos, los prompts, las respuestas originales de las evaluaciones y las decisiones justificadas del equipo.
 
-Al generar una evaluación con IA, indica el proveedor y el modelo utilizado
-(incluida la versión si se conoce) en la respuesta y en el nombre del archivo.
-Si no se puede confirmar el modelo, indícalo expresamente en vez de inferirlo.
+**Referencia académica:** [enunciado de la práctica](docs/enunciado/P1.docx.pdf).
 
-Mi solicitud es: [escribe aquí lo que necesitas].
-```
+## Síntesis de resultados
 
-## Índice de ejercicios y entregables
+| Caso de estudio | Requisitos iniciales (v1) | Evaluación general (v2) | Revisión INCOSE (v3) |
+| --- | --- | --- | --- |
+| Máquina de café | 24 funcionales y 2 no funcionales | 24 funcionales y 2 no funcionales | 27 funcionales y 2 no funcionales |
+| Proyecto propio | 15 funcionales y 4 no funcionales | 16 funcionales y 4 no funcionales | 30 funcionales y 4 no funcionales |
 
-| Bloque | Entregables | Estado |
-| --- | --- | --- |
-| Enunciado | [PDF de la práctica](docs/enunciado/P1.docx.pdf) | Disponible |
-| Ejercicio 1: requisitos iniciales | [Contexto y alcance](docs/01-requisitos-iniciales/contexto-y-alcance.md), [requisitos v1](docs/01-requisitos-iniciales/requisitos-v1.md) | Cerrado por confirmación del equipo; v1 se conserva como versión inicial y las revisiones posteriores se recogen en v2 y v3 |
-| Ejercicio 2: evaluación general con IA | [Prompt común](docs/02-evaluacion-ia/prompt.md), [respuesta OpenAI gpt-6.1-sol](docs/02-evaluacion-ia/respuesta-openai-gpt-6.1-sol.md), [respuesta deepseek-v4.1-flash-free](docs/02-evaluacion-ia/respuesta-deepseek-v4.1-flash-free.md), [evaluación y decisiones](docs/02-evaluacion-ia/evaluacion-y-decisiones.md), [requisitos v2](docs/02-evaluacion-ia/requisitos-v2.md) | Cerrado por decisión del equipo con las evaluaciones actuales, las decisiones registradas y los requisitos v2; podrán incorporarse otros modelos como ampliación futura |
-| Ejercicio 3: evaluación INCOSE | [Reglas seleccionadas](docs/03-evaluacion-incose/reglas-seleccionadas.md), [prompt](docs/03-evaluacion-incose/prompt.md), [respuesta OpenAI gpt-6.1-sol](docs/03-evaluacion-incose/respuesta-openai-gpt-6.1-sol.md), [respuesta DeepSeek deepseek-v4.1-flash-free](docs/03-evaluacion-incose/respuesta-deepseek-v4.1-flash-free.md), [matriz y decisiones](docs/03-evaluacion-incose/matriz-y-decisiones.md), [requisitos v3](docs/03-evaluacion-incose/requisitos-v3.md), [comparativa](docs/03-evaluacion-incose/comparativa-evaluaciones.md) | Cerrado por confirmación del equipo, con las decisiones de las 15 observaciones en 12 temas, los requisitos v3 (27 funcionales y 2 no funcionales), la comparativa y la valoración crítica revisados; se conservan las limitaciones documentadas |
-| Ejercicio 4: implementación y verificación | [OpenSpec](openspec/), [código](src/), [pruebas](tests/), [plan de pruebas](docs/04-verificacion/plan-de-pruebas.md), [trazabilidad](docs/04-verificacion/trazabilidad.csv), [informe](docs/04-verificacion/informe-verificacion.md) | Pendiente; opcional según el apartado 1.6 |
-| Ejercicio 5: proyecto propio | **Requisitos iniciales:** [contexto y alcance](docs/05-proyecto-propio/01-requisitos-iniciales/contexto-y-alcance.md), [requisitos v1](docs/05-proyecto-propio/01-requisitos-iniciales/requisitos-v1.md), [enunciado del proyecto final](docs/05-proyecto-propio/01-requisitos-iniciales/PROYECTO_FINAL.pdf). **Evaluación general con IA:** [prompt](docs/05-proyecto-propio/02-evaluacion-ia/prompt.md), [respuesta Grok 4.7](docs/05-proyecto-propio/02-evaluacion-ia/respuesta-grok4.7-extrahigh-fast.md), [evaluación y decisiones](docs/05-proyecto-propio/02-evaluacion-ia/evaluacion-y-decisiones.md), [requisitos v2](docs/05-proyecto-propio/02-evaluacion-ia/requisitos-v2.md). **Evaluación INCOSE:** [reglas](docs/05-proyecto-propio/03-evaluacion-incose/reglas-seleccionadas.md), [prompt](docs/05-proyecto-propio/03-evaluacion-incose/prompt.md), [respuesta SpaceXAI Grok 4.7](docs/05-proyecto-propio/03-evaluacion-incose/respuesta-spacexai-grok-4.7.md), [matriz](docs/05-proyecto-propio/03-evaluacion-incose/matriz-y-decisiones.md), [requisitos v3](docs/05-proyecto-propio/03-evaluacion-incose/requisitos-v3.md) | El equipo aceptó el 28 de octubre de 2026 las aplicaciones E5-001 a E5-037; v2 es la base. La v3 aplica las propuestas INCOSE INC-OBS-002 a INC-OBS-018 y queda pendiente de confirmación del equipo: 31 requisitos funcionales y 4 no funcionales. INC-OBS-001 no cambia enunciados. La respuesta original de la evaluación general está archivada. El contexto no se ha reescrito |
-| Conclusiones | [Ventajas y limitaciones de la IA](docs/conclusiones.md) | Pendiente |
+La evaluación general permitió concretar comportamientos, límites y criterios de verificación. La revisión INCOSE contribuyó a explicitar condiciones y separar obligaciones independientes. El aumento del número de requisitos refleja estas descomposiciones y las decisiones documentadas; no se utiliza como indicador de calidad.
 
-## Orden general del trabajo
+## Ejercicio 1. Requisitos iniciales de la máquina de café
 
-1. Definir contexto, alcance y requisitos iniciales de la cafetera.
-2. Evaluar los requisitos con IA y preparar la versión revisada.
-3. Evaluarlos frente a reglas seleccionadas de INCOSE y preparar la siguiente versión y comparativa.
-4. Si se realiza el ejercicio opcional, derivar especificaciones, implementar y verificar.
-5. Aplicar el proceso al proyecto propio y redactar las conclusiones.
+Se identifican los actores, las necesidades, los límites y los supuestos del sistema. La especificación incluye selección de bebidas, disponibilidad de ingredientes y vasos, pago, cancelación, preparación y comunicación de incidencias.
 
-Conservar las versiones de requisitos y las evidencias de las evaluaciones que se realicen. Las respuestas originales de IA deben distinguirse de las decisiones del equipo. No presentar propuestas como decisiones acordadas.
+- [Contexto y alcance](docs/01-requisitos-iniciales/contexto-y-alcance.md).
+- [Requisitos iniciales — v1](docs/01-requisitos-iniciales/requisitos-v1.md): identificador, enunciado, descripción, módulo y criterio de verificación.
 
-## Organización de archivos
+## Ejercicio 2. Evaluación general de calidad mediante IA
 
-```text
-docs/
-├── enunciado/
-├── 01-requisitos-iniciales/
-├── 02-evaluacion-ia/
-├── 03-evaluacion-incose/
-├── 04-verificacion/
-├── 05-proyecto-propio/
-│   ├── 01-requisitos-iniciales/
-│   ├── 02-evaluacion-ia/
-│   └── 03-evaluacion-incose/
-└── conclusiones.md
-openspec/   # Ejercicio 4, si se realiza
-src/        # Ejercicio 4, si se realiza
-tests/      # Ejercicio 4, si se realiza
-```
+Se revisan ambigüedades, información incompleta, verificabilidad, redundancias, contradicciones y posibles omisiones. Las dos evaluaciones se consolidan en 14 asuntos, además de dos preguntas adicionales, con decisiones justificadas del equipo.
 
-La matriz de trazabilidad forma parte de los entregables de verificación si se realiza el ejercicio 4. No es necesario mantenerla durante el trabajo ordinario de documentación.
+- [Prompt de evaluación](docs/02-evaluacion-ia/prompt.md).
+- Evaluaciones originales: [OpenAI gpt-6.1-sol](docs/02-evaluacion-ia/respuesta-openai-gpt-6.1-sol.md) y [DeepSeek deepseek-v4.1-flash-free](docs/02-evaluacion-ia/respuesta-deepseek-v4.1-flash-free.md).
+- [Evaluación consolidada y decisiones](docs/02-evaluacion-ia/evaluacion-y-decisiones.md).
+- [Requisitos revisados — v2](docs/02-evaluacion-ia/requisitos-v2.md).
+
+## Ejercicio 3. Evaluación frente a reglas INCOSE
+
+La revisión aborda singularidad, claridad, estructura gramatical, términos subjetivos, condiciones de aplicación y verificabilidad. Se utiliza la hoja-resumen oficial de la *INCOSE Guide to Writing Requirements v4* y una selección explícita de reglas. Las 15 observaciones de los dos modelos se agrupan en 12 temas para su revisión y decisión.
+
+- [Reglas seleccionadas y alcance de la evaluación](docs/03-evaluacion-incose/reglas-seleccionadas.md).
+- [Hoja-resumen oficial INCOSE v4](docs/03-evaluacion-incose/incose_rwg_gtwr_v4_summary_sheet.pdf).
+- [Prompt de evaluación INCOSE](docs/03-evaluacion-incose/prompt.md).
+- Evaluaciones originales: [OpenAI gpt-6.1-sol](docs/03-evaluacion-incose/respuesta-openai-gpt-6.1-sol.md) y [DeepSeek deepseek-v4.1-flash-free](docs/03-evaluacion-incose/respuesta-deepseek-v4.1-flash-free.md).
+- [Matriz de evaluación y decisiones](docs/03-evaluacion-incose/matriz-y-decisiones.md).
+- [Requisitos revisados — v3](docs/03-evaluacion-incose/requisitos-v3.md).
+- [Comparativa de evaluaciones y valoración crítica](docs/03-evaluacion-incose/comparativa-evaluaciones.md).
+
+## Ejercicio 5. Aplicación al proyecto propio
+
+El proyecto propio transforma requisitos de control de acceso en modelos lógicos RBAC/ABAC y casos de prueba, con supervisión del analista. Su especificación distingue generación, validación estática y ejecución sobre una API de simulación o de referencia, e incluye trazabilidad y métricas.
+
+### Requisitos iniciales
+
+- [Enunciado del proyecto final](docs/05-proyecto-propio/01-requisitos-iniciales/PROYECTO_FINAL.pdf).
+- [Contexto y alcance](docs/05-proyecto-propio/01-requisitos-iniciales/contexto-y-alcance.md).
+- [Requisitos iniciales — v1](docs/05-proyecto-propio/01-requisitos-iniciales/requisitos-v1.md).
+
+### Evaluación general de calidad
+
+- [Prompt de evaluación](docs/05-proyecto-propio/02-evaluacion-ia/prompt.md).
+- [Evaluación original de Grok 4.7](docs/05-proyecto-propio/02-evaluacion-ia/respuesta-grok4.7-extrahigh-fast.md).
+- [Evaluación y decisiones sobre los 37 hallazgos](docs/05-proyecto-propio/02-evaluacion-ia/evaluacion-y-decisiones.md).
+- [Requisitos revisados — v2](docs/05-proyecto-propio/02-evaluacion-ia/requisitos-v2.md).
+
+### Evaluación INCOSE y análisis crítico
+
+- [Reglas seleccionadas](docs/05-proyecto-propio/03-evaluacion-incose/reglas-seleccionadas.md).
+- [Prompt de evaluación INCOSE](docs/05-proyecto-propio/03-evaluacion-incose/prompt.md).
+- [Evaluación original de Grok 4.7](docs/05-proyecto-propio/03-evaluacion-incose/respuesta-spacexai-grok-4.7.md).
+- [Matriz y decisiones sobre las 18 observaciones](docs/05-proyecto-propio/03-evaluacion-incose/matriz-y-decisiones.md).
+- [Requisitos revisados — v3](docs/05-proyecto-propio/03-evaluacion-incose/requisitos-v3.md).
+- [Comparativa de evaluaciones y valoración crítica](docs/05-proyecto-propio/03-evaluacion-incose/comparativa-evaluaciones.md).
+
+## Conclusiones
+
+La IA resultó útil para identificar posibles problemas y estructurar la revisión, mientras que el criterio del equipo fue necesario para valorar las propuestas, preservar el alcance y decidir los cambios. La comparación de evaluaciones también mostró límites de interpretación, clasificación y suficiencia de los criterios de verificación.
+
+- [Conclusiones sobre las ventajas y limitaciones de la IA generativa](docs/conclusiones.md).
+
+## Alcance de los resultados
+
+Las versiones v3 de ambos casos y sus análisis comparativos están revisados y confirmados por el equipo. Las versiones anteriores y las respuestas originales se conservan como evidencia de la evolución documental.
+
+La evaluación INCOSE se limita a las reglas seleccionadas y no declara conformidad con toda la guía. R1 conserva una limitación por ausencia de un patrón formal acordado. En el proyecto propio, el protocolo de rendimiento mantiene pendientes la selección del corpus, la configuración, el entorno y las repeticiones de medida. Los criterios de verificación incluidos en los requisitos describen comprobaciones previstas.
