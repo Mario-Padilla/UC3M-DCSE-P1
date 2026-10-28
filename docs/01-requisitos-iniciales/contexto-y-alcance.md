@@ -10,14 +10,14 @@ El sistema objeto de estudio es el software de una máquina expendedora de café
 
 El enunciado establece cinco funcionalidades principales: seleccionar bebidas, gestionar el pago, comprobar la disponibilidad de ingredientes, preparar la bebida y comunicar incidencias al usuario. El alcance debe ser acotado; no se pretende desarrollar un sistema industrial completo.
 
-El software controla las operaciones de una máquina de bebidas calientes en vaso: selección, pago, comprobación de existencias, preparación y comunicación de incidencias. Intercambia información con el terminal de pago sin contacto, los sensores y los mecanismos de preparación. No incluye funciones de administración. El diseño y la fabricación del hardware quedan fuera del alcance.
+El software controla las operaciones de una máquina de bebidas calientes en vaso: selección, pago, comprobación de existencias, preparación y comunicación de incidencias. Intercambia información con el terminal de pago sin contacto, los sensores y los mecanismos de preparación. No incluye funciones de administración. La modificación de existencias por un administrador podrá valorarse como posible ampliación futura, pero no forma parte del alcance acordado. El diseño y la fabricación del hardware quedan fuera del alcance.
 
 **Límite del sistema e interacciones identificadas:**
 
 ```mermaid
 flowchart LR
     C[Cliente] -->|selección y operación de compra| S
-    S -->|información sobre la compra, la preparación y las incidencias| C
+    S -->|catálogo, disponibilidad, compra, preparación e incidencias| C
     S <-->|solicitud de pago y resultado| T[Terminal de pago sin contacto]
     S <-->|lecturas de sensores y órdenes de preparación| H[Sensores y mecanismos de la máquina]
     S[[Software de control de la máquina]]
@@ -32,7 +32,7 @@ El cliente interactúa con la aplicación a través de una pantalla y de los bot
 | Bebida | Producto que el cliente puede seleccionar para su preparación. El catálogo y las recetas iniciales figuran en el apartado 3. |
 | Ingrediente | Recurso necesario para preparar una bebida. Las cantidades figuran en las recetas del apartado 3. |
 | Disponibilidad | Existencia de los ingredientes y vasos necesarios para preparar y entregar la bebida seleccionada. |
-| Incidencia | Situación que impide prestar el servicio o altera su funcionamiento y que debe comunicarse al cliente. |
+| Incidencia | Falta de disponibilidad, denegación del pago o fallo que impide entregar una bebida cuyo pago fue autorizado. |
 | Receta | Definición de los ingredientes y cantidades necesarios para preparar una bebida. Las recetas iniciales se indican en el apartado 3. |
 | Autorización de pago | Resultado comunicado por el terminal de pago sin contacto para indicar si se autoriza el cobro de la operación. |
 
@@ -62,11 +62,11 @@ Las funciones siguientes delimitan el comportamiento general del software.
 
 | Función | Descripción |
 | --- | --- |
-| Selección de bebidas | Mostrar el catálogo y permitir que el cliente elija una bebida. |
-| Gestión del pago | Solicitar el pago al terminal de pago sin contacto una vez comprobada la disponibilidad de la bebida. Si se deniega, permitir que el cliente vuelva a intentarlo o cancele la compra, sin iniciar la preparación. |
-| Comprobación de ingredientes y existencias | Comprobar, antes de solicitar el pago, que hay ingredientes y vasos suficientes para preparar la bebida seleccionada. Si no hay disponibilidad, informar al cliente y permitir que seleccione otra bebida o cancele, sin solicitar el pago. Actualizar las existencias según el consumo real al finalizar la preparación, incluso si falla. |
+| Selección de bebidas | Mostrar el catálogo, los precios y la disponibilidad de cada bebida antes de que el cliente elija. El aviso de falta de disponibilidad no identifica el ingrediente o recurso concreto que falta. |
+| Gestión del pago | Solicitar el pago al terminal de pago sin contacto una vez comprobada la disponibilidad de la bebida. Mientras la autorización está pendiente no se puede cancelar. Si se deniega, permitir que el cliente vuelva a intentarlo o cancele antes de iniciar otro intento, sin iniciar la preparación. |
+| Comprobación de ingredientes y existencias | Comprobar, antes de solicitar el pago, que hay ingredientes y vasos suficientes para preparar la bebida seleccionada. Si no hay disponibilidad, informar al cliente de forma genérica y permitir que seleccione otra bebida o cancele, sin solicitar el pago. Actualizar las existencias según el consumo real al finalizar la preparación, incluso si falla. |
 | Preparación de la bebida | Coordinar la preparación de la bebida según su receta y su entrega en un vaso. Para ello, utilizar los sensores y los mecanismos de la máquina, que dispone de un depósito interno de agua. |
-| Comunicación de incidencias | Informar al cliente de las incidencias que afecten al servicio, así como del progreso y de la finalización de la preparación. |
+| Comunicación de incidencias | Informar al cliente de la falta de disponibilidad, la denegación del pago y los fallos que impidan entregar una bebida cuyo pago fue autorizado. También comunicar el progreso y la finalización correcta de la preparación. |
 
 **Catálogo y recetas iniciales:**
 
@@ -79,13 +79,13 @@ Las funciones siguientes delimitan el comportamiento general del software.
 | B5 | Capuchino | 1,40 € | 7 | 14 | — | 150 |
 | B6 | Chocolate | 1,30 € | — | — | 25 | 150 |
 
-El agua procede de un depósito interno. Cada operación corresponde a una bebida. El catálogo, los precios y las recetas son datos iniciales; la aplicación no incluye funciones para modificarlos ni para registrar reposiciones.
+El agua procede de un depósito interno. Cada operación corresponde a una bebida. El catálogo, los precios, las recetas y las existencias iniciales son datos de partida; no se fijan aquí cantidades iniciales. La aplicación no incluye funciones para modificarlos ni para registrar reposiciones.
 
 ## 4. Fuera del alcance
 
 Quedan fuera del alcance el diseño y la fabricación del hardware, así como el procesamiento bancario. La aplicación solicita el pago al terminal de pago sin contacto y recibe el resultado de la solicitud.
 
-El sistema solicita la devolución cuando se ha cobrado una compra y no se entrega la bebida, incluida una autorización recibida después de cancelar. El tratamiento de fallos de la solicitud de devolución queda fuera del alcance por decisión del equipo.
+Cuando el terminal ha autorizado el pago y un fallo impide entregar la bebida, el sistema informa al cliente y solicita la devolución íntegra asociada a ese intento de pago. Esto se aplica si el fallo ocurre antes de iniciar, durante o después de la preparación, siempre que impida la entrega. El cliente recibe un aviso de que la devolución fue solicitada; no se garantiza aquí el resultado del procesamiento externo. Los fallos de la solicitud de devolución quedan fuera del alcance por decisión del equipo. No se solicita una devolución por cancelar antes de iniciar la autorización o por un pago denegado.
 
 ## 5. Supuestos
 
@@ -95,16 +95,15 @@ El sistema se define con los siguientes supuestos:
 | --- |
 | Se modela una única máquina y una bebida por operación de compra. |
 | Solo se admite el pago con tarjeta sin contacto. |
-| La aplicación no contempla un operador ni funciones de administración. El catálogo, los precios, las recetas y las existencias iniciales son datos de partida. |
-| La máquina dispone de sensores, un depósito interno de agua y mecanismos para dispensar vasos y preparar bebidas. |
+| La aplicación no contempla un operador ni funciones de administración. El catálogo, los precios, las recetas y las existencias iniciales son datos de partida; no se definen cantidades concretas ni se incluye una función para ajustar el stock. La gestión por un administrador podrá considerarse en el futuro, sin constituir un requisito actual. |
+| La máquina dispone de sensores, un depósito interno de agua y mecanismos para dispensar vasos y preparar bebidas. Comunica al software información suficiente para distinguir la preparación y entrega correctas de un fallo que impide entregar la bebida; no se especifica cómo detecta o reporta ese resultado. |
 | Los mecanismos comunican al software las cantidades de ingredientes y el número de vasos realmente consumidos, incluso cuando la preparación falla. La medición física de esas cantidades queda fuera del alcance. |
-| El cliente puede cancelar mientras no se haya recibido la autorización del pago, incluso con la respuesta pendiente o tras una denegación. Una vez autorizado el pago, no puede cancelar, aunque la preparación todavía no haya comenzado. |
-| Si llega una autorización de pago después de cancelar, no se prepara la bebida y se solicita la devolución íntegra al medio de pago utilizado. |
-| Si un fallo impide entregar una bebida ya cobrada, se solicita la devolución íntegra al medio de pago utilizado. No se garantiza aquí el resultado del procesamiento externo de la devolución. |
+| El cliente puede cancelar durante la selección y antes de iniciar el proceso de autorización del pago. No puede cancelar mientras una autorización está pendiente. Si el terminal deniega el pago, puede cancelar antes de solicitar un nuevo intento. Tras la autorización no puede cancelar, tampoco durante la preparación ni cuando la bebida está lista para recoger. |
+| Si el terminal autoriza el pago y un fallo impide entregar la bebida en cualquier etapa, el sistema informa que el servicio no se completó, solicita la devolución íntegra asociada al intento autorizado y termina la operación sin iniciar automáticamente otra preparación o compra. |
 
-Si la bebida seleccionada no está disponible, el cliente puede seleccionar directamente otra o cancelar. La nueva selección sustituye a la anterior y se comprueba su disponibilidad antes de solicitar el pago. En los demás casos, cambiar de bebida requiere cancelar la operación actual mientras esté permitido e iniciar una nueva.
+Si la bebida seleccionada no está disponible, el cliente puede seleccionar directamente otra o cancelar. La nueva selección sustituye a la anterior y se comprueba su disponibilidad antes de solicitar el pago. En los demás casos, cambiar de bebida requiere cancelar la operación actual mientras esté permitido e iniciar una nueva. No se puede cambiar de bebida mientras la autorización esté pendiente ni después de ser aprobada.
 
-Cuando se deniega el pago, se permiten reintentos sin un número máximo definido. Si un fallo durante la preparación impide la entrega, la operación termina con un aviso y una solicitud de devolución del importe cobrado. No se intenta preparar otra bebida automáticamente. Los ingredientes y vasos se descuentan según el consumo real, aunque la preparación falle.
+Cuando se deniega el pago, se permiten reintentos sin un número máximo definido. El sistema deberá asociar la solicitud de devolución con el intento de pago autorizado correspondiente, sin que este documento prescriba si la referencia la conserva la aplicación o la gestiona el terminal. Si un fallo impide la entrega después de autorizar el pago, la operación termina con un aviso de servicio no completado y de que se solicitó la devolución. No se inicia otra compra ni preparación automáticamente. Los ingredientes y vasos se descuentan según el consumo real, aunque la preparación falle.
 
 ### Condiciones de calidad acordadas
 
@@ -114,14 +113,14 @@ El equipo ha aprobado que todos los textos dirigidos al cliente estén en españ
 
 Los siguientes casos de uso resumen las interacciones principales del sistema.
 
-La secuencia de una compra es: selección de la bebida → comprobación de disponibilidad → pago → preparación → entrega. La preparación solo comienza si hay ingredientes y vasos suficientes y el pago ha sido autorizado.
+La secuencia de una compra es: consulta del catálogo y disponibilidad → selección de la bebida → comprobación de disponibilidad → autorización del pago → preparación → entrega. La preparación solo comienza si hay ingredientes y vasos suficientes, el pago ha sido autorizado y no se ha comunicado un fallo que impida entregar la bebida. El cliente recibe el aviso de bebida lista solo tras confirmarse el resultado correcto de preparación y entrega.
 
 | Caso de uso | Actor principal | Interacción y resultado esperado | Situaciones alternativas |
 | --- | --- | --- | --- |
-| Seleccionar una bebida | Cliente | El cliente consulta el catálogo y elige una bebida. La aplicación comprueba la disponibilidad de ingredientes y vasos antes de solicitar el pago. | Si no hay disponibilidad, se informa al cliente y se permite seleccionar directamente otra bebida o cancelar, sin solicitar el pago. En los demás casos, cambiar de bebida requiere cancelar mientras esté permitido. |
-| Pagar la bebida seleccionada | Cliente | Una vez comprobada la disponibilidad, la aplicación solicita el pago al terminal. El cliente utiliza una tarjeta sin contacto y la aplicación recibe el resultado. | Si se deniega el pago, el cliente puede reintentarlo sin un máximo definido o cancelar. Mientras la respuesta esté pendiente también puede cancelar. No se prepara una bebida sin autorización ni se reactiva una operación cancelada. |
-| Cancelar una compra | Cliente | El cliente cancela mientras no se haya recibido la autorización del pago. La operación termina sin iniciar la preparación. | Si llega una autorización después de cancelar, se solicita la devolución íntegra al medio de pago utilizado. Una vez recibida la autorización de una operación vigente, no se acepta la cancelación, aunque aún no haya comenzado la preparación. |
-| Solicitar la preparación de una bebida | Cliente | Tras comprobar la disponibilidad y recibir la autorización del pago, la aplicación coordina la preparación y la entrega de la bebida seleccionada, siempre que no se haya cancelado la operación. | Si un fallo impide entregar una bebida cobrada, se informa al cliente y se solicita la devolución al medio de pago utilizado. Si el fallo ocurre durante la preparación, la operación termina sin preparar otra bebida automáticamente y se descuentan los recursos realmente consumidos. |
-| Consultar una incidencia comunicada por la máquina | Cliente | La aplicación informa al cliente de un problema relacionado con la compra o con la preparación. | El mensaje y las acciones posteriores dependen de la incidencia y del estado de la operación. |
+| Seleccionar una bebida | Cliente | El cliente consulta el catálogo, los precios y la disponibilidad, y elige una bebida. La aplicación comprueba ingredientes y vasos antes de solicitar el pago. | Si no hay disponibilidad, se informa genéricamente y se permite seleccionar directamente otra bebida o cancelar, sin solicitar el pago. En otros casos, cambiar de bebida requiere cancelar mientras esté permitido. |
+| Pagar la bebida seleccionada | Cliente | Una vez comprobada la disponibilidad, la aplicación solicita el pago al terminal. El cliente utiliza una tarjeta sin contacto y la aplicación recibe el resultado. | Si se deniega el pago, el cliente puede reintentarlo sin un máximo definido o cancelar antes de otro intento. Mientras la autorización esté pendiente no se puede cancelar. No se prepara una bebida sin autorización. |
+| Cancelar una compra | Cliente | El cliente cancela durante la selección y antes de iniciar la autorización, o tras recibir una denegación y antes de otro intento. La operación termina sin iniciar la preparación. | No se acepta la cancelación mientras una autorización está pendiente ni después de su aprobación, incluida la preparación y el estado de bebida lista. |
+| Solicitar la preparación de una bebida | Cliente | Tras comprobar la disponibilidad y recibir la autorización del pago, la aplicación coordina la preparación y la entrega de la bebida seleccionada. | Si un fallo impide entregar la bebida, antes, durante o después de prepararla, se informa que el servicio no se completó, se solicita la devolución asociada al intento autorizado y se termina la operación sin iniciar automáticamente otra compra o preparación. Los recursos se descuentan según el consumo real. |
+| Consultar una incidencia comunicada por la máquina | Cliente | La aplicación informa sobre la falta de disponibilidad, una denegación del pago o un fallo que impida entregar la bebida. | Ante un fallo que impida entregar una bebida con pago autorizado, se informa del servicio no completado y de la solicitud de devolución. El aviso de bebida lista solo aparece tras confirmarse una preparación y entrega correctas. |
 
 La comprobación de ingredientes forma parte del proceso de compra y preparación. El cliente no la inicia como una operación independiente.
