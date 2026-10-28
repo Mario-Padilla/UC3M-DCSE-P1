@@ -16,6 +16,10 @@ Esta repo sirve como **estructura e índice del trabajo**. Los documentos de cad
 Antes de responder o hacer cambios, lee README.md y AGENTS.md para
 entender el contexto del proyecto y seguir sus instrucciones.
 
+Al generar una evaluación con IA, indica el proveedor y el modelo utilizado
+(incluida la versión si se conoce) en la respuesta y en el nombre del archivo.
+Si no se puede confirmar el modelo, indícalo expresamente en vez de inferirlo.
+
 Mi solicitud es: [escribe aquí lo que necesitas].
 ```
 
@@ -25,7 +29,7 @@ Mi solicitud es: [escribe aquí lo que necesitas].
 | --- | --- | --- |
 | Enunciado | [PDF de la práctica](docs/enunciado/P1.docx.pdf) | Disponible |
 | Ejercicio 1: requisitos iniciales | [Contexto y alcance](docs/01-requisitos-iniciales/contexto-y-alcance.md), [requisitos v1](docs/01-requisitos-iniciales/requisitos-v1.md) | En curso: contexto y v1 actualizados con las decisiones del equipo, incluido el supuesto de comunicación del consumo real, y los dos requisitos no funcionales aprobados |
-| Ejercicio 2: evaluación general con IA | [Prompt](docs/02-evaluacion-ia/prompt.md), [respuesta](docs/02-evaluacion-ia/respuesta-ia.md), [evaluación y decisiones](docs/02-evaluacion-ia/evaluacion-y-decisiones.md), [requisitos v2](docs/02-evaluacion-ia/requisitos-v2.md) | Pendiente |
+| Ejercicio 2: evaluación general con IA | [Prompt común](docs/02-evaluacion-ia/prompt.md), [respuesta GPT SOL](docs/02-evaluacion-ia/respuesta-gpt-sol.md), [respuesta deepseek-v4.1-flash-free](docs/02-evaluacion-ia/respuesta-deepseek-v4.1-flash-free.md), [evaluación y decisiones](docs/02-evaluacion-ia/evaluacion-y-decisiones.md), [requisitos v2](docs/02-evaluacion-ia/requisitos-v2.md) | En curso: evaluaciones GPT SOL y deepseek-v4.1-flash-free disponibles; pendientes las evaluaciones de los demás modelos, las decisiones justificadas del equipo y la versión revisada |
 | Ejercicio 3: evaluación INCOSE | [Reglas seleccionadas](docs/03-evaluacion-incose/reglas-seleccionadas.md), [prompt](docs/03-evaluacion-incose/prompt.md), [respuesta](docs/03-evaluacion-incose/respuesta-ia.md), [matriz y decisiones](docs/03-evaluacion-incose/matriz-y-decisiones.md), [requisitos v3](docs/03-evaluacion-incose/requisitos-v3.md), [comparativa](docs/03-evaluacion-incose/comparativa-evaluaciones.md) | Pendiente |
 | Ejercicio 4: implementación y verificación | [OpenSpec](openspec/), [código](src/), [pruebas](tests/), [plan de pruebas](docs/04-verificacion/plan-de-pruebas.md), [trazabilidad](docs/04-verificacion/trazabilidad.csv), [informe](docs/04-verificacion/informe-verificacion.md) | Pendiente; opcional según el apartado 1.6 |
 | Ejercicio 5: proyecto propio | [Contexto y alcance](docs/05-proyecto-propio/contexto-y-alcance.md), [requisitos v1](docs/05-proyecto-propio/requisitos-v1.md), [evaluaciones](docs/05-proyecto-propio/evaluaciones/) | Pendiente |

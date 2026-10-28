@@ -1,6 +1,6 @@
 # Contexto y alcance del sistema
 
-**Fuentes:** apartados 1.2 y 1.3 del [enunciado de la práctica](../enunciado/P1.docx.pdf) y documento `documento_requisitos_v1.md`, facilitado como referencia.
+**Fuentes:** apartados 1.2 y 1.3 del [enunciado de la práctica](../enunciado/P1.docx.pdf) y el documento [requisitos iniciales v1](requisitos-v1.md), facilitado como referencia.
 
 Las reglas de compra y las condiciones de calidad de este documento incorporan las decisiones comunicadas por el equipo durante la revisión de requisitos. Estas decisiones se distinguen de las funcionalidades generales indicadas por el enunciado.
 

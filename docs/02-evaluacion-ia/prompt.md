@@ -6,6 +6,8 @@ Para ejecutar este prompt, adjunta los tres documentos indicados. Si la herramie
 
 Conserva el prompt utilizado y la respuesta completa de la IA como evidencias del ejercicio. El equipo revisará las observaciones y decidirá cuáles acepta, rechaza o modifica; la salida de la IA no constituye una versión aprobada de los requisitos.
 
+Registra cada respuesta en un archivo separado cuyo nombre identifique el modelo, por ejemplo `respuesta-gpt-sol.md`. En la respuesta, identifica el proveedor y el nombre del modelo utilizado, incluida la versión o identificador exacto si está disponible. No infieras ni inventes estos datos: si no puedes confirmarlos, indica «no especificado» y conserva cualquier denominación proporcionada por el usuario.
+
 ## Prompt
 
 ```text
@@ -83,6 +85,8 @@ Responde en español, con lenguaje claro y conciso. Organiza el resultado en est
 ## 1. Documentos y limitaciones
 
 Indica qué documentos leíste y cualquier limitación que afecte a la evaluación.
+
+Antes de esta sección, incluye los metadatos de la evaluación: proveedor, modelo utilizado (y versión o identificador exacto si se conoce), fecha y herramienta/interfaz usada. Si algún dato no está disponible o no puede confirmarse, indícalo expresamente; no lo deduzcas.
 
 ## 2. Cobertura de la revisión individual
 
