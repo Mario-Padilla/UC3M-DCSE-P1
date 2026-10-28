@@ -4,7 +4,7 @@ Esta versión revisa los [requisitos iniciales v1](../01-requisitos-iniciales/re
 
 El sistema es el Sistema de Generación Automática de Modelos y Pruebas de Ciberseguridad mediante IA Generativa. El analista lo utiliza desde la interfaz web ya descrita en el contexto. El flujo es: ingesta y confirmación de etiquetas, generación del modelo, confirmación del modelo, generación de casos en estado Pendiente, validación estática y, solo después, ejecución del subconjunto seleccionado contra la API de simulación o de referencia.
 
-Estas elecciones cierran las observaciones E5-001 a E5-037. Siguen fuera del alcance el reentrenamiento del LLM, la corrección del código de la API, las pruebas destructivas o no autorizadas sobre producción, la conversión del modelo en políticas ejecutables de un motor externo y la auditoría física de la red. Esta versión no fija una revisión de NIST SP 800-53, un contrato HTTP, un formato de archivo para las pruebas o el baseline, reconocimiento de texto en imágenes ni un umbral distinto de los ya escritos.
+Estas elecciones cierran las observaciones E5-001 a E5-037. El equipo aceptó esas aplicaciones el 28 de octubre de 2026. Siguen fuera del alcance el reentrenamiento del LLM, la corrección del código de la API, las pruebas destructivas o no autorizadas sobre producción, la conversión del modelo en políticas ejecutables de un motor externo y la auditoría física de la red. Esta versión no fija una revisión de NIST SP 800-53, un contrato HTTP, un formato de archivo para las pruebas o el baseline, reconocimiento de texto en imágenes ni un umbral distinto de los ya escritos.
 
 ## 1. Requisitos funcionales
 
