@@ -1,71 +1,131 @@
-# Requisitos iniciales del sistema — v1
+# Contexto y alcance del sistema
 
-## 1. Introducción
+**Fuentes:** [Especificación de Requisitos v1](requisitos_sistema.md) y la propuesta del proyecto para el **Sistema de Generación Automática de Modelos y Pruebas de Ciberseguridad mediante IA Generativa**.
 
-Este documento define los requisitos iniciales del software para el **Sistema de Generación Automática de Modelos y Pruebas desde Requisitos basados en IA Generativa**. El sistema se concibe como una herramienta interactiva capaz de procesar especificaciones de requisitos en lenguaje natural o semiestructurado, extraer su semántica mediante modelos de IA generativa, sintetizar elementos de un modelo lógico y derivar casos de prueba vinculados de forma trazable a los requisitos de origen.
-
-El alcance inicial contempla la ingesta de especificaciones de requisitos, la generación interactiva del modelo lógico, la generación de casos de prueba sintéticos o ejecutables, la ejecución de un subconjunto de dichas pruebas contra un entorno de simulación o API objetivo, y la emisión de un informe consolidado con métricas de trazabilidad y cobertura.
-
-El sistema establece una separación conceptual y funcional estricta entre las fases de **Generación**, **Validación** y **Ejecución** de pruebas:
-* **Generación:** Creación asistida por IA de modelos lógicos y conjuntos de datos/pasos de prueba.
-* **Validación:** Comprobación sintáctica, semántica y de consistencia lógica entre requisito, modelo y prueba, previa a cualquier ejecución.
-* **Ejecución:** Corrida efectiva de los casos de prueba seleccionados sobre el sistema bajo prueba y captura de veredictos.
-
-Los requisitos se dividen en funcionales (`GMP-RF`) y no funcionales (`GMP-RNF`). La columna «Cómo comprobarlo» recoge el criterio de verificación previsto para auditar el cumplimiento del requisito.
+Las reglas de generación, validación estática y evaluación de este documento incorporan las decisiones del equipo de proyecto para acotar y estructurar el desarrollo del sistema, guiados por los objetivos general y específicos (OE1, OE2, OE3).
 
 ---
 
-## 2. Requisitos funcionales
+## 1. Descripción general del sistema
 
-### Ingesta y Análisis de Requisitos
+El sistema objeto de estudio es una plataforma asistida por Inteligencia Artificial Generativa diseñada para transformar especificaciones de requisitos de ciberseguridad expresadas en lenguaje natural o semiestructurado en modelos lógicos de autorización y casos de prueba automatizados.
 
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-001 | El sistema deberá permitir la ingesta de documentos de requisitos en formato texto plano, Markdown y PDF. | Permite al usuario cargar la especificación funcional que servirá de entrada al motor de IA generativa. | Ingesta | Cargar un documento en cada uno de los formatos admitidos (TXT, MD, PDF) y verificar que el contenido textual se extrae y visualiza correctamente en la interfaz. |
-| GMP-RF-002 | El sistema deberá identificar y segmentar automáticamente los requisitos individuales dentro del documento cargado. | Asigna un identificador único a cada requisito detectado y permite su revisión o corrección manual. | Ingesta | Cargar un documento con 10 requisitos numerados y comprobar que el sistema identifica 10 entidades de requisitos independientes con sus respectivos identificadores. |
+El sistema establece una separación conceptual y funcional estricta entre tres fases consecutivas:
+1. **Generación:** Análisis de requisitos mediante IA generativa para sintetizar modelos lógicos de control de acceso (RBAC/ABAC) y derivar especificaciones de prueba.
+2. **Validación:** Comprobación estática (sintáctica, semántica y lógica) de la coherencia entre requisitos, modelos y pruebas, antes de cualquier ejecución externa.
+3. **Ejecución:** Corrida efectiva de un subconjunto de pruebas sobre un entorno de simulación o API de referencia para evaluar los veredictos de seguridad.
 
-### Generación de Modelos Lógicos
+El alcance debe ser acotado; no se pretende desarrollar un motor de reentrenamiento de LLM ni un entorno de despliegue directo de políticas en producción. El software se centra en la ingesta, la generación asistida por IA con supervisión humana (*human-in-the-loop*), la validación previa, la ejecución en sandbox/API y la presentación de métricas de trazabilidad y cobertura frente a un modelo de referencia manual (*baseline*).
 
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-003 | El sistema deberá generar automáticamente los elementos de un modelo lógico a partir de los requisitos analizados. | Entidades, relaciones, estados, entradas/salidas y reglas de negocio derivadas explícitamente mediante IA generativa. | Generación de Modelos | Introducir un requisito con 3 entidades y 2 reglas de transición. Comprobar que la IA genera la estructura correspondiente de entidades, campos y estados en el modelo lógico. |
-| GMP-RF-004 | El sistema deberá permitir al usuario visualizar, editar y confirmar el modelo lógico generado antes de proceder a la generación de pruebas. | Garantiza la supervisión humana (*human-in-the-loop*) previa a las etapas siguientes. | Generación de Modelos | Generar un modelo lógico, modificar el nombre de una entidad y añadir una restricción manual. Verificar que los cambios se guardan y son considerados en los pasos posteriores. |
+**Límite del sistema e interacciones identificadas:**
 
-### Generación de Casos de Prueba
+```mermaid
+flowchart LR
+    A[Ingeniero / Analista de Seguridad] <-->|ingesta, edición de modelos, solicitudes y revisión| S
+    S <-->|prompts, parámetros y respuestas sintéticas| LLM[Motor de IA Generativa / LLM External]
+    S <-->|peticiones de prueba HTTP/API y veredictos| T[API / Entorno Objetivo de Simulación]
+    S[[Sistema de Generación de Modelos y Pruebas]]
+```
 
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-005 | El sistema deberá generar automáticamente casos de prueba a partir del modelo lógico y de los requisitos de origen. | Cada caso de prueba incluye precondiciones, pasos de ejecución, datos de entrada y resultados esperados (aserciones). | Generación de Pruebas | Solicitar la generación de pruebas para un requisito dado y comprobar que se producen casos para caminos nominales (éxito) y excepcionales (fallo). |
-| GMP-RF-006 | El sistema deberá separar de forma transparente la fase de generación de pruebas de la fase de ejecución. | Generar pruebas no implica su ejecución automática; el usuario puede almacenar, revisar o exportar las pruebas sin ejecutarlas. | Generación de Pruebas | Generar un conjunto de 5 casos de prueba. Verificar que las pruebas quedan guardadas en estado «Pendiente» sin que se haya emitido ninguna llamada o ejecución sobre el sistema objetivo. |
+El analista de seguridad interactúa con la aplicación mediante una interfaz web para supervisar todo el ciclo de vida de la prueba.
 
-### Validación de Artefactos
+**Términos utilizados:**
 
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-007 | El sistema deberá validar la consistencia sintáctica y semántica del modelo lógico y de las pruebas respecto a los requisitos sin realizar ejecuciones. | Detecta lagunas, inconsistencias de tipo, referencias huérfanas o contradicciones lógicas entre artefactos. | Validación | Introducir un caso de prueba que hace referencia a un campo inexistente en el modelo lógico. Comprobar que la función de validación detecta el error antes de permitir la ejecución. |
-| GMP-RF-008 | El sistema deberá proporcionar un informe de validación estática previo a la ejecución indicando el grado de coherencia del modelo. | Permite corregir discrepancias en la etapa de diseño sintético. | Validación | Ejecutar el validador sobre un conjunto con discrepancias conocidas y comprobar que se genera un reporte con alertas clasificadas por severidad (Error, Advertencia). |
-
-### Ejecución de Pruebas
-
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-009 | El sistema deberá permitir la selección manual o automatizada de un subconjunto de casos de prueba para su ejecución. | El usuario no está obligado a ejecutar la suite completa en cada corrida. | Ejecución | Seleccionar 3 de 10 casos de prueba generados y lanzar la orden de ejecución. Verificar que solo se procesan y reportan los 3 casos seleccionados. |
-| GMP-RF-010 | El sistema deberá ejecutar el subconjunto de pruebas seleccionado contra un entorno de simulación o API objetivo y capturar los resultados. | Registra las respuestas reales, tiempos de ejecución y determina el veredicto (*Pass*, *Fail*, *Error*). | Ejecución | Lanzar la ejecución de una prueba sobre un endpoint simulado y comprobar que se registra la respuesta real del servidor y se asigna el veredicto adecuado según la aserción. |
-
-### Trazabilidad e Informes
-
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RF-011 | El sistema deberá mantener una matriz de trazabilidad bidireccional que vincule Requisito $\leftrightarrow$ Elemento de Modelo $\leftrightarrow$ Caso de Prueba. | Cada caso de prueba debe rastrearse inequívocamente hasta el requisito que valida. | Trazabilidad | Seleccionar un caso de prueba en la interfaz y verificar que se highlighting / muestra el requisito original y el elemento del modelo lógico del que fue derivado. |
-| GMP-RF-012 | El sistema deberá calcular y presentar métricas básicas de cobertura de requisitos y tasa de éxito de ejecución. | Incluye la tasa de cobertura $C = \frac{R_{\text{cubiertos}}}{R_{\text{totales}}} \times 100$ y el porcentaje de pruebas superadas. | Informes | Introducir 10 requisitos, generar pruebas para 8 de ellos y ejecutar 5. Verificar que el cuadro de mando indica 80% de cobertura de requisitos y calcula correctamente la tasa de éxito de los 5 ejecutados. |
-| GMP-RF-013 | El sistema deberá exportar el informe de resultados consolidado en formato PDF y JSON. | Facilita la integración con herramientas externas de gestión de pruebas o CI/CD. | Informes | Generar un informe tras la ejecución y exportarlo en PDF y JSON. Comprobar que ambos archivos contienen los datos de la corrida, matriz de trazabilidad y métricas. |
+| Término | Significado en este documento |
+| --- | --- |
+| Requisito de Ciberseguridad | Declaración funcional o de seguridad que especifica una regla de control de acceso o restricción de autorización (alineada con OWASP ASVS o NIST SP 800-53). |
+| Modelo Lógico | Estructura formal de control de acceso expresada en términos de sujetos/roles, recursos, acciones, atributos y condiciones (modelos RBAC o ABAC). |
+| Caso de Prueba de Seguridad | Especificación que define precondiciones, rol/sujeto solicitante, recurso, acción, datos de entrada y el resultado esperado (autorizado vs. denegado). |
+| Validación Estática | Proceso de verificación sintáctica, semántica y lógica entre artefactos sin realizar peticiones HTTP ni ejecutar código en la API objetivo. |
+| Trazabilidad | Enlace bidireccional que relaciona un Requisito de Seguridad $\leftrightarrow$ Elemento del Modelo Lógico $\leftrightarrow$ Caso de Prueba. |
+| Referencia Manual (*Baseline*) | Conjunto de modelos de autorización y casos de prueba elaborados manualmente por expertos para servir como patrón de comparación (*benchmark*). |
+| Veredicto | Resultado final de la ejecución de una prueba sobre la API objetivo (*Pass*, *Fail*, *Error*). |
 
 ---
 
-## 3. Requisitos no funcionales
+## 2. Actores
 
-| ID | Requisito | Descripción | Módulo | Cómo comprobarlo |
-| --- | --- | --- | --- | --- |
-| GMP-RNF-001 | La interfaz de usuario y los mensajes del sistema deberán presentarse en español. | Mantiene un idioma común en el panel de control, validaciones y reportes generados. | Interfaz | Recorrer los flujos de ingesta, visualización de modelos, validación y reporte. Comprobar que todos los textos fijos e instrucciones están en español. |
-| GMP-RNF-002 | El tiempo de respuesta de la IA generativa para la creación de un modelo lógico básico (hasta 10 requisitos) no deberá superar los 15 segundos. | Garantiza una experiencia interactiva ágil durante las sesiones de modelado. | Rendimiento | Cargar un documento con 10 requisitos, cronometrar desde la solicitud de generación de modelo hasta su despliegue en pantalla y verificar que no excede los 15 segundos. |
-| GMP-RNF-003 | El sistema deberá almacenar el histórico de prompts, versiones de modelos y casos de prueba generados para garantizar la auditabilidad y reproducibilidad. | Registra la configuración de la IA y la semilla/versión utilizada para cada artefacto generado. | Seguridad y Auditoría | Consultar el registro de auditoría de una ejecución anterior y verificar que se detallan la versión de la IA, el prompt enviado y el identificador de la corrida. |
+| Actor | Necesidad u objetivo | Tipo |
+| --- | --- | --- |
+| Analista / Ingeniero de Seguridad | Cargar requisitos, revisar/editar modelos lógicos, validar coherencia estática, seleccionar y ejecutar pruebas, y consultar métricas de trazabilidad y cobertura. | Actor humano |
+| Motor de IA Generativa | Procesar los prompts de análisis y sintetizar modelos lógicos, reglas de autorización y casos de prueba abstractos. | Sistema externo |
+| API Objetivo / Entorno de Simulación | Recibir las peticiones HTTP/REST generadas por el motor de ejecución y responder con los códigos de estado y payloads para determinar el veredicto. | Sistema externo |
+
+El procesamiento generativo de lenguaje natural y la ejecución final ocurren en las fronteras del sistema. La aplicación coordina el flujo, aplica las reglas de validación estática y gestiona la persistencia de trazabilidad y métricas.
+
+### Necesidades de los interesados
+
+Las siguientes necesidades describen lo que el analista de seguridad espera del sistema:
+
+| Interesado | Necesidad |
+| --- | --- |
+| Analista de Seguridad | Extraer y segmentar automáticamente requisitos desde documentos estructurados o no estructurados. |
+| Analista de Seguridad | Visualizar y editar el modelo lógico de autorización sugerido por la IA antes de confirmar la creación de pruebas. |
+| Analista de Seguridad | Disponer de pruebas nominales (acceso permitido) y excepcionales/ataque (acceso denegado) vinculadas a los requisitos. |
+| Analista de Seguridad | Detectar incoherencias o contradicciones lógicas en los modelos antes de lanzar pruebas reales. |
+| Analista de Seguridad | Evaluar el rendimiento y cobertura de la IA frente a un conjunto de referencia manual (*baseline*). |
+
+---
+
+## 3. Alcance funcional
+
+Las funciones siguientes delimitan el comportamiento general del software.
+
+| Función | Descripción |
+| --- | --- |
+| Ingesta y Segmentación | Cargar documentos de requisitos (TXT, MD, PDF), extraer enunciados individuales y clasificarlos según estándares de referencia (OWASP ASVS, NIST). |
+| Generación de Modelos Lógicos | Transformar requisitos analizados en estructuras de control de acceso (RBAC/ABAC) mediante IA generativa, permitiendo la edición e inspección humana. |
+| Generación de Casos de Prueba | Derivar pruebas de seguridad nominales y de ataque a partir del modelo lógico verificado, manteniéndolas en estado «Pendiente» sin ejecutarlas. |
+| Validación Estática de Artefactos | Comprobar la coherencia semántica y lógica entre requisitos, modelo y pruebas. Emitir un informe de discrepancias o inconsistencias sin realizar ejecuciones. |
+| Ejecución Seleccionada de Pruebas | Permitir la selección de un subconjunto de pruebas y ejecutarlas contra la API de referencia/simulación, registrando el código de respuesta y veredicto. |
+| Trazabilidad y Evaluación | Mantener la matriz de trazabilidad bidireccional, calcular la cobertura ($C = \frac{R_{\text{cubiertos}}}{R_{\text{totales}}} \times 100$) y comparar métricas frente a un *baseline* manual. |
+
+**Estándares y Artefactos de Referencia:**
+
+| Estándar / Marco | Enfoque Principal | Formatos Admitidos | Modelos Soportados |
+| --- | --- | --- | --- |
+| OWASP ASVS V4 | Control de Acceso y Gestión de Sesiones | TXT, Markdown, PDF | RBAC (Basado en Roles) |
+| NIST SP 800-53 | Controles de Seguridad AC (Access Control) | TXT, Markdown, PDF | ABAC (Basado en Atributos) |
+
+---
+
+## 4. Fuera del alcance
+
+Quedan fuera del alcance del sistema:
+* El ajuste fino (*fine-tuning*) o reentrenamiento pesado de modelos de lenguaje subyacentes.
+* La corrección automática de vulnerabilidades directamente en el código fuente de la API objetivo.
+* La ejecución destructiva o no autorizada de pruebas sobre entornos de producción reales.
+* La conversión automática del modelo lógico en código ejecutable de políticas para motores de autorización específicos de terceros (p. ej., políticas Open Policy Agent en OPA) más allá de la estructura lógica representada en la aplicación.
+* La auditoría física de sistemas de red o infraestructura subyacente.
+
+---
+
+## 5. Supuestos
+
+El sistema se define con los siguientes supuestos:
+
+| Supuesto |
+| --- |
+| Los documentos de requisitos ingresados están redactados en español o inglés y contienen especificaciones de control de acceso. |
+| La API objetivo de simulación expone interfaces HTTP/REST accesibles e inocuas para la ejecución de pruebas de autorización. |
+| El modelo de IA generativa externo se encuentra disponible a través de su correspondiente API web. |
+| El analista de seguridad actúa como supervisor (*human-in-the-loop*), con la capacidad de modificar el modelo lógico o corregir casos de prueba antes de autorizar la ejecución. |
+| La fase de validación estática es obligatoria previa a la ejecución dinámica; el sistema puede advertir al usuario si intenta ejecutar pruebas sobre un modelo con fallos críticos no corregidos. |
+| El cálculo de métricas de cobertura y precisión toma como estándar de comparación (*ground truth*) los datos importados como *baseline* manual por el usuario. |
+
+Si un requisito de ciberseguridad es ambiguo, la IA sugerirá una interpretación dentro del modelo lógico que el usuario deberá revisar o validar. La edición manual de un modelo lógico actualiza automáticamente las precondiciones de generación para los casos de prueba posteriores.
+
+---
+
+## 6. Casos de uso principales
+
+La secuencia general del flujo de trabajo es: Carga e ingesta de requisitos $\rightarrow$ Análisis y generación del modelo lógico $\rightarrow$ Revisión/Edición humana $\rightarrow$ Generación de casos de prueba $\rightarrow$ Validación estática $\rightarrow$ Ejecución del subconjunto seleccionado $\rightarrow$ Evaluación de trazabilidad e informes.
+
+| Caso de uso | Actor principal | Interacción y resultado esperado | Situaciones alternativas |
+| --- | --- | --- | --- |
+| Ingestar y segmentar requisitos | Analista de Seguridad | El analista carga una especificación (PDF/MD/TXT); el sistema extrae e identifica requisitos individuales etiquetados con estándares (OWASP/NIST). | Si la extracción detecta enunciados ambiguos, el analista puede modificar manualmente el texto o los identificadores asignados. |
+| Generar y revisar modelo lógico | Analista de Seguridad | La IA analiza los requisitos y genera el esquema RBAC/ABAC (roles, permisos, atributos). El analista revisa y ajusta las reglas. | Si el usuario edita o añade una regla manual, el sistema actualiza la estructura lógica y la persiste para la fase de pruebas. |
+| Generar casos de prueba | Analista de Seguridad | El sistema deriva pruebas de acceso autorizado y denegado vinculadas a cada regla del modelo lógico. Quedan guardadas como «Pendientes». | El usuario puede solicitar regenerar pruebas específicas ajustando los parámetros de temperatura/prompt del motor. |
+| Validar artefactos estáticamente | Analista de Seguridad | El sistema ejecuta el motor de comprobación sintáctica y lógica sin llamar a la API externa, emitiendo un reporte de consistencia. | Si se detectan contradicciones (p. ej. rol sin permisos), el sistema marca las alertas y recomienda corregir el modelo antes de ejecutar. |
+| Ejecutar subconjunto de pruebas | Analista de Seguridad | El analista selecciona las pruebas que desea lanzar contra la API objetivo. El sistema envía las peticiones y asigna veredictos (*Pass*/*Fail*/*Error*). | Si la API objetivo no responde o devuelve un error no controlado de red, la prueba se registra con el veredicto *Error*. |
+| Evaluar cobertura y comparar con *baseline* | Analista de Seguridad | El sistema calcula las métricas de cobertura de requisitos, la tasa de veredictos y compara la precisión frente a un *baseline* manual. | Si no se ha importado un *baseline* manual, el sistema muestra únicamente las métricas absolutas de cobertura y ejecución. |
