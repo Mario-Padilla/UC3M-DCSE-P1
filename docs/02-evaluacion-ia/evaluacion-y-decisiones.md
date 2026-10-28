@@ -51,4 +51,6 @@ Estas cuestiones aparecieron en las preguntas finales de DeepSeek, no como halla
 
 El equipo ha decidido las 14 observaciones consolidadas y las dos preguntas opcionales. Las decisiones se distinguen de los hallazgos originales y se aplican en `requisitos-v2.md`; el contexto registra los supuestos y límites acordados. La versión inicial `requisitos-v1.md` se conserva sin modificar como evidencia.
 
-No se incorporan cantidades de existencias iniciales, actores administrativos, métodos de detección física ni protocolos concretos del terminal o de la máquina. La posibilidad de que un administrador gestione existencias queda como consideración futura, no como compromiso del equipo. Los fallos del proceso externo de devolución permanecen fuera del alcance. El equipo no ha declarado terminado el ejercicio 2: siguen pendientes las evaluaciones de otros modelos y las actividades que correspondan según el trabajo.
+No se incorporan cantidades de existencias iniciales, actores administrativos, métodos de detección física ni protocolos concretos del terminal o de la máquina. La posibilidad de que un administrador gestione existencias queda como consideración futura, no como compromiso del equipo. Los fallos del proceso externo de devolución permanecen fuera del alcance.
+
+El equipo ha declarado cerrado el ejercicio 2 con las evaluaciones actuales, las decisiones registradas y los requisitos v2. Esta versión es la base para el ejercicio 3. La incorporación de otros modelos será una ampliación futura y dará lugar a los ajustes documentales que correspondan.
