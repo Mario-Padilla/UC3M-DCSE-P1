@@ -2,7 +2,7 @@
 
 ## 1. Base, fuente y estado
 
-**Estado: propuestas registradas, pendientes de confirmación del equipo. No hay requisitos v3.**
+**Estado: las propuestas INC-OBS-002 a INC-OBS-018 están aplicadas en [requisitos v3](requisitos-v3.md). Esa versión sigue pendiente de confirmación del equipo. INC-OBS-001 no cambia enunciados.**
 
 La base es [requisitos v2](../02-evaluacion-ia/requisitos-v2.md), confirmada por el equipo el 28 de octubre de 2026. La evidencia de esta evaluación es una sola respuesta: [SpaceXAI Grok 4.7](respuesta-spacexai-grok-4.7.md). En la cafetera hubo dos modelos; aquí no hay una segunda evaluación con la que comparar.
 
@@ -49,25 +49,25 @@ El hallazgo y la redacción íntegros están en la respuesta. Esta tabla no los 
 
 | Registro | Requisito | Valoración | Hallazgo | Propuesta | Decisión del equipo |
 | --- | --- | --- | --- | --- | --- |
-| INC-OBS-001 | Los 20 requisitos | RA | No hay un patrón formal documentado para comprobar R1. | Aportar el patrón existente o acordar uno. Mantener mientras tanto los enunciados en este punto. | Pendiente de confirmación del equipo |
-| INC-OBS-002 | GMP-RF-002 | OP | Segmentar y corregir pueden cumplirse por separado. El rechazo del identificador duplicado está solo en la descripción. | Separar en GMP-RF-002-A y GMP-RF-002-B. | Pendiente de confirmación del equipo |
-| INC-OBS-003 | GMP-RF-003 | OP | Proponer etiquetas y no generar el modelo hasta confirmarlas son dos obligaciones. | Separar en GMP-RF-003-A y GMP-RF-003-B. | Pendiente de confirmación del equipo |
-| INC-OBS-004 | GMP-RF-003 | OP | «Una etiqueta» no fija el catálogo ni si puede haber varias. | Incluir en GMP-RF-003-A el catálogo, la cardinalidad y la exclusión de autenticación ya aceptados. | Pendiente de confirmación del equipo |
-| INC-OBS-005 | GMP-RF-004 | OP | RBAC para OWASP y ABAC para NIST son resultados distintos. Faltan en el enunciado los elementos de cada modelo y el caso de las dos etiquetas. | Separar en GMP-RF-004-A, GMP-RF-004-B y GMP-RF-004-C. | Pendiente de confirmación del equipo |
-| INC-OBS-006 | GMP-RF-004 | OP | La interpretación de un requisito ambiguo, ya aceptada, está solo en la descripción. | Añadir GMP-RF-004-D con esa regla, sin definir «ambiguo» de otra manera. | Pendiente de confirmación del equipo |
-| INC-OBS-007 | GMP-RF-005 | OP | Mostrar, editar y exigir confirmación son tres obligaciones. El efecto sobre los casos Pendiente no está en el enunciado. | Separar en GMP-RF-005-A, GMP-RF-005-B y GMP-RF-005-C. | Pendiente de confirmación del equipo |
-| INC-OBS-008 | GMP-RF-007 | OP | Guardar sin ejecutar, corregir y exportar tienen resultados distintos. | Separar en GMP-RF-007-A, GMP-RF-007-B y GMP-RF-007-C. El formato sigue sin fijarse. | Pendiente de confirmación del equipo |
-| INC-OBS-009 | GMP-RF-016 | OP | «Casos concretos» no dice que los elige el analista. | Nombrar en el enunciado los casos en Pendiente que indique el analista. | Pendiente de confirmación del equipo |
-| INC-OBS-010 | GMP-RF-008 | OP | La consistencia sintáctica, la semántica y la lógica se comprueban por separado y su criterio está solo en la descripción. | Separar en GMP-RF-008-A, GMP-RF-008-B y GMP-RF-008-C. | Pendiente de confirmación del equipo |
-| INC-OBS-011 | GMP-RF-009 | OP | Emitir el informe, clasificar y condicionar la ejecución son obligaciones distintas. El sentido de Error y Advertencia está solo en la descripción. | Separar en GMP-RF-009-A, GMP-RF-009-B y GMP-RF-009-C. | Pendiente de confirmación del equipo |
-| INC-OBS-012 | GMP-RF-010 | OP | «Filtros» no nombra los tres filtros ya aceptados ni la condición del filtro de severidad. | Trasladar esos filtros al enunciado, sin añadir otro selector. | Pendiente de confirmación del equipo |
-| INC-OBS-013 | GMP-RF-011 | OP | Pass, Fail y Error se nombran sin la regla de asignación ya aceptada. | Separar la ejecución, GMP-RF-011-A, de la regla de veredicto, GMP-RF-011-B. Se mantiene el 403 como único código fijado. | Pendiente de confirmación del equipo |
-| INC-OBS-014 | GMP-RF-013 | OP | Cobertura y tasa de éxito tienen fórmulas distintas y ninguna está en el enunciado. | Separar en GMP-RF-013-A y GMP-RF-013-B, con los cálculos ya escritos en v2. | Pendiente de confirmación del equipo |
-| INC-OBS-015 | GMP-RF-014 | OP | «Casos válidos» no tiene criterio en el enunciado. | Sustituirlo por casos sin Error de validación estática. | Pendiente de confirmación del equipo |
-| INC-OBS-016 | GMP-RF-015 | OP | «Informe consolidado» no dice qué contiene ni cuándo entran las comparaciones del baseline. | Trasladar al enunciado el contenido ya aceptado en la descripción. | Pendiente de confirmación del equipo |
-| INC-OBS-017 | GMP-RNF-001 | OP | El enunciado obliga a redactar en español sin las excepciones ya aceptadas para veredictos, texto ingerido y claves JSON. | Incorporar esas excepciones al enunciado. | Pendiente de confirmación del equipo |
-| INC-OBS-018 | GMP-RNF-004 | OP | El 85 % no tiene en el enunciado la coincidencia ni el denominador. «Extraídas» y «generadas» pueden no ser el mismo conjunto. | Pasar al enunciado la fórmula de la descripción y decir «generadas». | Pendiente de confirmación del equipo |
+| INC-OBS-001 | Los 20 requisitos | RA | No hay un patrón formal documentado para comprobar R1. | Aportar el patrón existente o acordar uno. Mantener mientras tanto los enunciados en este punto. | Aplicada en v3 como limitación: no se adopta un patrón ni se reescriben enunciados. Pendiente de confirmación del equipo |
+| INC-OBS-002 | GMP-RF-002 | OP | Segmentar y corregir pueden cumplirse por separado. El rechazo del identificador duplicado está solo en la descripción. | Separar en GMP-RF-002-A y GMP-RF-002-B. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-003 | GMP-RF-003 | OP | Proponer etiquetas y no generar el modelo hasta confirmarlas son dos obligaciones. | Separar en GMP-RF-003-A y GMP-RF-003-B. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-004 | GMP-RF-003 | OP | «Una etiqueta» no fija el catálogo ni si puede haber varias. | Incluir en GMP-RF-003-A el catálogo, la cardinalidad y la exclusión de autenticación ya aceptados. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-005 | GMP-RF-004 | OP | RBAC para OWASP y ABAC para NIST son resultados distintos. Faltan en el enunciado los elementos de cada modelo y el caso de las dos etiquetas. | Separar en GMP-RF-004-A, GMP-RF-004-B y GMP-RF-004-C. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-006 | GMP-RF-004 | OP | La interpretación de un requisito ambiguo, ya aceptada, está solo en la descripción. | Añadir GMP-RF-004-D con esa regla, sin definir «ambiguo» de otra manera. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-007 | GMP-RF-005 | OP | Mostrar, editar y exigir confirmación son tres obligaciones. El efecto sobre los casos Pendiente no está en el enunciado. | Separar en GMP-RF-005-A, GMP-RF-005-B y GMP-RF-005-C. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-008 | GMP-RF-007 | OP | Guardar sin ejecutar, corregir y exportar tienen resultados distintos. | Separar en GMP-RF-007-A, GMP-RF-007-B y GMP-RF-007-C. El formato sigue sin fijarse. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-009 | GMP-RF-016 | OP | «Casos concretos» no dice que los elige el analista. | Nombrar en el enunciado los casos en Pendiente que indique el analista. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-010 | GMP-RF-008 | OP | La consistencia sintáctica, la semántica y la lógica se comprueban por separado y su criterio está solo en la descripción. | Separar en GMP-RF-008-A, GMP-RF-008-B y GMP-RF-008-C. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-011 | GMP-RF-009 | OP | Emitir el informe, clasificar y condicionar la ejecución son obligaciones distintas. El sentido de Error y Advertencia está solo en la descripción. | Separar en GMP-RF-009-A, GMP-RF-009-B y GMP-RF-009-C. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-012 | GMP-RF-010 | OP | «Filtros» no nombra los tres filtros ya aceptados ni la condición del filtro de severidad. | Trasladar esos filtros al enunciado, sin añadir otro selector. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-013 | GMP-RF-011 | OP | Pass, Fail y Error se nombran sin la regla de asignación ya aceptada. | Separar la ejecución, GMP-RF-011-A, de la regla de veredicto, GMP-RF-011-B. Se mantiene el 403 como único código fijado. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-014 | GMP-RF-013 | OP | Cobertura y tasa de éxito tienen fórmulas distintas y ninguna está en el enunciado. | Separar en GMP-RF-013-A y GMP-RF-013-B, con los cálculos ya escritos en v2. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-015 | GMP-RF-014 | OP | «Casos válidos» no tiene criterio en el enunciado. | Sustituirlo por casos sin Error de validación estática. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-016 | GMP-RF-015 | OP | «Informe consolidado» no dice qué contiene ni cuándo entran las comparaciones del baseline. | Trasladar al enunciado el contenido ya aceptado en la descripción. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-017 | GMP-RNF-001 | OP | El enunciado obliga a redactar en español sin las excepciones ya aceptadas para veredictos, texto ingerido y claves JSON. | Incorporar esas excepciones al enunciado. | Aplicada en v3; pendiente de confirmación del equipo |
+| INC-OBS-018 | GMP-RNF-004 | OP | El 85 % no tiene en el enunciado la coincidencia ni el denominador. «Extraídas» y «generadas» pueden no ser el mismo conjunto. | Pasar al enunciado la fórmula de la descripción y decir «generadas». | Aplicada en v3; pendiente de confirmación del equipo |
 
 ## 4. Qué no hace esta matriz
 
-No reescribe v2 ni crea v3. No evalúa si dos requisitos repiten la misma obligación. No compara esta respuesta con otro modelo. El análisis crítico de la IA corresponde a un paso posterior, cuando el equipo haya decidido estas filas.
+No da por confirmada la v3 ni reescribe v2. No evalúa si dos requisitos repiten la misma obligación. No compara esta respuesta con otro modelo. El análisis crítico de la IA corresponde a un paso posterior.
