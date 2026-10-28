@@ -10,7 +10,7 @@ Los requisitos se agrupan en funcionales (`CAF-RF`) y no funcionales (`CAF-RNF`)
 
 Se mantienen los IDs de los requisitos no separados. CAF-RF-003A complementa CAF-RF-003; CAF-RF-015A/B sustituyen CAF-RF-015 y CAF-RF-023A/B sustituyen CAF-RF-023. El apartado 4 conserva las relaciones de origen y decisión. La versión contiene **27 requisitos funcionales y 2 no funcionales**.
 
-**Estado:** revisión final de v3 confirmada por el equipo. No se declara conformidad con R1: no hay un patrón formal acordado y no se adoptará en esta fase. Tampoco se fija persistencia ni frecuencia para el aviso de preparación. La revisión de esta versión no implica el cierre del ejercicio 3; la comparativa y la valoración crítica se recogen en el [análisis comparativo](comparativa-evaluaciones.md).
+**Estado:** revisión final de v3 confirmada por el equipo; ejercicio 3 cerrado por confirmación del equipo tras revisar también la comparativa y la valoración crítica del [análisis comparativo](comparativa-evaluaciones.md). No se declara conformidad con R1: no hay un patrón formal acordado y no se adoptará en esta fase. Tampoco se fija persistencia ni frecuencia para el aviso de preparación.
 
 ## 2. Requisitos funcionales
 

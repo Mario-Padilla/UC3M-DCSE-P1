@@ -4,7 +4,7 @@
 
 Este documento desarrolla los pasos 5 y 6 del apartado 1.5 del [enunciado](../enunciado/P1.docx.pdf): comparar la evaluación general del ejercicio 2 con la evaluación basada en reglas INCOSE del ejercicio 3 y valorar críticamente la capacidad de la IA para aplicar esas reglas.
 
-**Estado:** comparativa y valoración crítica redactadas con asistencia de OpenAI, modelo `gpt-6.1-sol` (`openai/gpt-6.1-sol`), mediante OpenCode; pendientes de revisión del equipo. El equipo ha confirmado la revisión final de [requisitos v3](requisitos-v3.md), pero no el cierre del ejercicio 3. Las conclusiones analíticas de este documento no constituyen nuevas decisiones del equipo.
+**Estado:** comparativa y valoración crítica redactadas con asistencia de OpenAI, modelo `gpt-6.1-sol` (`openai/gpt-6.1-sol`), mediante OpenCode, y revisadas por el equipo. El equipo ha confirmado la revisión final de [requisitos v3](requisitos-v3.md), la revisión de este análisis y el cierre del ejercicio 3. Este análisis no introduce nuevas decisiones sobre el comportamiento del sistema.
 
 Las evidencias utilizadas son:
 
@@ -111,4 +111,4 @@ Su capacidad no equivale a una validación automática: hubo discrepancias de in
 - La evaluación general concretó comportamiento, límites e interfaces y mejoró la cobertura de comprobaciones; la evaluación INCOSE añadió separaciones y explicitaciones de obligaciones, condiciones y contenidos.
 - La evolución v2 → v3 pasa de 26 a 29 requisitos por CAF-RF-003A y las separaciones de CAF-RF-015 y CAF-RF-023. Los dos requisitos no funcionales se conservan sin cambios. La relación de cada revisión con su decisión está en v3, §4.
 - La revisión final de v3 está confirmada por el equipo. R1 sigue sin poder comprobarse por ausencia de patrón acordado; la persistencia y la frecuencia del aviso de preparación siguen sin fijarse, conforme a las decisiones registradas.
-- **Pendiente:** revisar esta comparativa y su valoración crítica y confirmar, si procede, el cierre del ejercicio 3. Esta redacción no atribuye al equipo la aprobación del análisis ni cierra el ejercicio automáticamente.
+- **Cierre confirmado:** el equipo ha revisado esta comparativa y su valoración crítica y ha confirmado el cierre del ejercicio 3, con las limitaciones documentadas.
