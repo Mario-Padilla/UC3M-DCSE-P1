@@ -2,7 +2,7 @@
 
 ## 1. Base, fuentes y estado
 
-**Estado: comparación y decisiones del equipo registradas para los 12 temas y las 15 observaciones originales. CAF-RF-003A confirmado y requisitos v3 preparados; pendiente de revisión final del equipo y de la comparativa con el ejercicio 2.**
+**Estado: comparación y decisiones del equipo registradas para los 12 temas y las 15 observaciones originales. CAF-RF-003A confirmado y revisión final de requisitos v3 confirmada por el equipo. Comparativa con el ejercicio 2 y valoración crítica redactadas; pendientes de revisión del equipo y de confirmación del cierre del ejercicio 3.**
 
 Esta matriz reúne los hallazgos de las dos evaluaciones de [requisitos v2](../02-evaluacion-ia/requisitos-v2.md), base del ejercicio 3 procedente del ejercicio 2 cerrado por el equipo. Se han contrastado los análisis con las descripciones y comprobaciones de v2, el [contexto y alcance](../01-requisitos-iniciales/contexto-y-alcance.md) y las [reglas seleccionadas](reglas-seleccionadas.md).
 
@@ -113,7 +113,7 @@ Las decisiones siguientes proceden de la revisión de CMP-01 a CMP-12 realizada 
 
 La aceptación de una aclaración no significa aceptar automáticamente toda la propuesta original del modelo. En las aceptaciones parciales se distingue la parte acordada de las formulaciones o precisiones que no se adoptan. §5.1 recoge las acciones y los textos confirmados; una acción acordada sin enunciado íntegro confirmado no se presenta como una redacción literal aprobada.
 
-Las decisiones no cambian retrospectivamente las valoraciones de v2. Se ha preparado [requisitos v3](requisitos-v3.md) con las acciones y los textos acordados; la columna de aplicación indica los requisitos de destino. Los ajustes posteriores se registran en su propia columna, sin sobrescribir el hallazgo ni confundir una propuesta original con el texto acordado. Preparar v3 no equivale a su aprobación final ni al cierre del ejercicio.
+Las decisiones no cambian retrospectivamente las valoraciones de v2. Se ha preparado [requisitos v3](requisitos-v3.md) con las acciones y los textos acordados; la columna de aplicación indica los requisitos de destino. Los ajustes posteriores se registran en su propia columna, sin sobrescribir el hallazgo ni confundir una propuesta original con el texto acordado. El equipo ha confirmado posteriormente la revisión final de v3; esa confirmación no implica el cierre del ejercicio.
 
 | Registro | Fuente / observación | Tema | Decisión del equipo | Justificación del equipo | Redacción o acción acordada | Ajuste posterior a la decisión | Aplicación a v3 |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -229,7 +229,7 @@ Se ha preparado [requisitos-v3.md](requisitos-v3.md) con **27 requisitos funcion
 
 Los IDs y textos confirmados se incorporan literalmente. CAF-RF-009, CAF-RF-010 y CAF-RF-017 se redactan conforme a las acciones acordadas; su preparación no se presenta como una aprobación literal adicional. Se adaptan las descripciones y comprobaciones afectadas y se conservan íntegramente las filas no afectadas. El apartado 4 de v3 relaciona cada revisión con los registros E3 correspondientes.
 
-Las comprobaciones son previstas, no ejecutadas. La versión queda preparada para revisión final del equipo, sin declarar conformidad con R1 ni cierre del ejercicio.
+Las comprobaciones son previstas, no ejecutadas. El equipo ha confirmado la revisión final de la versión, sin declarar conformidad con R1 ni cierre del ejercicio.
 
 ## 6. Resumen y siguiente paso
 
@@ -238,6 +238,6 @@ Las comprobaciones son previstas, no ejecutadas. La versión queda preparada par
 - Se registran **2 hallazgos específicos solo de OA** (CAF-RF-009 y CAF-RF-019) y **6 solo de DS** (CAF-RF-003, 010, 014, 017, 018 y 022). «Solo» indica su procedencia, no su validez.
 - **Decisiones registradas:** los 12 temas se han revisado y los 15 registros tienen decisión. Se distinguen aceptaciones, aceptaciones parciales y la limitación confirmada de R1 con adopción de patrón aplazada. Las decisiones compartidas siguen vinculadas a cada observación de origen.
 - **Concreción confirmada:** el equipo ha confirmado CAF-RF-003A y su texto complementario. Se conserva el hallazgo DS original y se distingue la confirmación posterior de la aceptación parcial inicial.
-- **V3 preparada:** se han incorporado los textos confirmados de §5.1 y redactado CAF-RF-009, CAF-RF-010 y CAF-RF-017 conforme a las acciones acordadas, conservando los requisitos no afectados, los orígenes de las separaciones y las descripciones y comprobaciones correspondientes.
+- **V3 revisada por el equipo:** se han incorporado los textos confirmados de §5.1 y redactado CAF-RF-009, CAF-RF-010 y CAF-RF-017 conforme a las acciones acordadas, conservando los requisitos no afectados, los orígenes de las separaciones y las descripciones y comprobaciones correspondientes. El equipo ha confirmado su revisión final.
 - El patrón R1 queda sin adoptar en esta fase y su conformidad no puede comprobarse. La persistencia y la frecuencia del aviso de CAF-RF-020 quedan sin fijar; no se registran como exigencias nuevas.
-- Las decisiones no cambian retrospectivamente las valoraciones originales de v2. Quedan la revisión final de v3 por el equipo, la comparativa con el ejercicio 2 y la valoración crítica de los análisis; el ejercicio 3 sigue en curso.
+- Las decisiones no cambian retrospectivamente las valoraciones originales de v2. La [comparativa con el ejercicio 2 y la valoración crítica](comparativa-evaluaciones.md) están redactadas y pendientes de revisión del equipo. El ejercicio 3 sigue en curso hasta la confirmación de su cierre.
